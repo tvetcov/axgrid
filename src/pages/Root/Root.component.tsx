@@ -1,15 +1,12 @@
 import { Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
-import NavBar from 'components/NavBar';
+import ContentWrapper from 'components/ContentWrapper';
 
 const Root = () => {
     return (
-        <>
-            <NavBar />
+        <ContentWrapper>
             <Outlet />
-            <TanStackRouterDevtools />
-        </>
+        </ContentWrapper>
     );
 };
 

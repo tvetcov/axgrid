@@ -11,6 +11,10 @@
         "pretty": "npx prettier --write ."
     },
     "dependencies": {
+        "@emotion/react": "^11.11.3",
+        "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^5.15.10",
+        "@mui/material": "^5.15.10",
         "@tanstack/react-router": "^1.16.5",
         "@tanstack/router-devtools": "^1.16.5",
         "react": "^18.2.0",

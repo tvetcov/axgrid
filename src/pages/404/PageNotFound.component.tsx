@@ -1,11 +1,10 @@
-import NavBar from 'components/NavBar';
+import ContentWrapper from 'components/ContentWrapper';
 
 const PageNotFound = () => {
     return (
-        <>
-            <NavBar />
+        <ContentWrapper>
             <div>404: Page Not Found</div>
-        </>
+        </ContentWrapper>
     );
 };
 

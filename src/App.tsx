@@ -1,5 +1,8 @@
 import { createRouter, RouterProvider } from '@tanstack/react-router';
-import { routeTree } from './routeTree.gen';
+import { ThemeProvider } from '@mui/material';
+
+import { routeTree } from 'routeTree.gen';
+import theme from 'styles/theme.ts';
 
 const router = createRouter({ routeTree });
 
@@ -11,7 +14,11 @@ declare module '@tanstack/react-router' {
 }
 
 function App() {
-    return <RouterProvider router={router} />;
+    return (
+        <ThemeProvider theme={theme}>
+            <RouterProvider router={router} />
+        </ThemeProvider>
+    );
 }
 
 export default App;
