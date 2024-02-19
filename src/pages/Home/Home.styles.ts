@@ -5,5 +5,5 @@ export const homePageStyles: SxProps = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    height: '100%',
+    height: '100%'
 };

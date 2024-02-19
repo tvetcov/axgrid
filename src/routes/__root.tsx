@@ -7,5 +7,5 @@ export const Route = createRootRoute({
     component: () => <Root />,
     notFoundComponent: () => {
         return <PageNotFound />;
-    },
+    }
 });

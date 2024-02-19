@@ -1,8 +1,13 @@
-import { createLazyFileRoute } from '@tanstack/react-router';
+import { createLazyFileRoute, Outlet } from '@tanstack/react-router';
 
-import Dashboard from 'pages/Dashboard';
-import { ROUTE_LIST } from 'pages/config.ts';
+import { ROUTE_LIST } from 'pages/routes.ts';
+import TopBar from 'components/TopBar';
 
 export const Route = createLazyFileRoute(ROUTE_LIST.dashboard)({
-    component: () => <Dashboard />,
+    component: () => (
+        <>
+            <TopBar />
+            <Outlet />
+        </>
+    )
 });

@@ -1,8 +1,12 @@
+import Box from '@mui/material/Box';
+
+import { dashboardStyles } from './Dashboard.styles.ts';
+
 const Dashboard = () => {
     return (
-        <div>
+        <Box sx={dashboardStyles}>
             <h1>Dashboard</h1>
-        </div>
+        </Box>
     );
 };
 

@@ -1,13 +1,9 @@
-import { Paper } from '@mui/material';
+import Box from '@mui/material/Box';
 
 import { contentWrapperStyles } from './ContentWrapper.styles';
 
 const ContentWrapper = ({ children }: { children: React.JSX.Element }) => {
-    return (
-        <Paper sx={contentWrapperStyles} square>
-            {children}
-        </Paper>
-    );
+    return <Box sx={contentWrapperStyles}>{children}</Box>;
 };
 
 export default ContentWrapper;
