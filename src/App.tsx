@@ -2,7 +2,7 @@ import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { ThemeProvider } from '@mui/material';
 
 import { routeTree } from 'routeTree.gen';
-import theme from 'styles/theme.ts';
+import theme from 'styles/theme';
 
 const router = createRouter({ routeTree });
 

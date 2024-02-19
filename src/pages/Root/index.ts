@@ -1,3 +1,3 @@
-import Root from './Root.component.tsx';
+import Root from './Root.component';
 
 export default Root;

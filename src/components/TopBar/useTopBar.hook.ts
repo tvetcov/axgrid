@@ -33,7 +33,7 @@ export const useTopBar = () => {
     const pages = [
         {
             title: 'Dashboard',
-            onClick: () => navigate(ROUTE_LIST.dashboardIndex)
+            onClick: () => navigate(ROUTE_LIST.dashboard)
         },
         {
             title: 'Trading',

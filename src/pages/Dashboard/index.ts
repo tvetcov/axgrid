@@ -1,3 +1,3 @@
-import Dashboard from './Dashboard.component.tsx';
+import Dashboard from './Dashboard.component';
 
 export default Dashboard;

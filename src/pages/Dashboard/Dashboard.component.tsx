@@ -1,12 +1,26 @@
-import Box from '@mui/material/Box';
-
-import { dashboardStyles } from './Dashboard.styles.ts';
+import EnergySourceSelector from './components/EnergySourceSelector';
+import DashboardContextProvider from './context/DashboardContext.provider';
+import { useDashboard } from './useDashboard.hook';
 
 const Dashboard = () => {
+    const {
+        energyType,
+        setEnergyType,
+        availableEnergySources,
+        setAvailableEnergySources
+    } = useDashboard();
+
     return (
-        <Box sx={dashboardStyles}>
-            <h1>Dashboard</h1>
-        </Box>
+        <DashboardContextProvider
+            energyType={energyType}
+            setEnergyType={setEnergyType}
+            availableEnergySources={availableEnergySources}
+            setAvailableEnergySources={setAvailableEnergySources}
+        >
+            <div>
+                <EnergySourceSelector />
+            </div>
+        </DashboardContextProvider>
     );
 };
 

@@ -1,5 +1,9 @@
 import { SxProps } from '@mui/material';
 
 export const dashboardStyles: SxProps = {
-    background: 'lightblue'
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+    width: '100vw',
+    backgroundColor: 'background.default'
 };

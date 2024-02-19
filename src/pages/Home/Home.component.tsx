@@ -3,9 +3,9 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import LoginIcon from '@mui/icons-material/Login';
 
-import useNavigateTo from 'hooks/useNavigateTo.hook.ts';
-import { ROUTE_LIST } from 'pages/routes.ts';
-import { homePageStyles } from './Home.styles.ts';
+import useNavigateTo from 'hooks/useNavigateTo.hook';
+import { ROUTE_LIST } from 'pages/routes';
+import { homePageStyles } from './Home.styles';
 
 const Home = () => {
     const navigate = useNavigateTo();

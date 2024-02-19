@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { useTopBar } from './useTopBar.hook';
 import { topBarStyles } from './TopBar.styles';
-import { LOGO_TEXT } from './topBar.utils.ts';
+import { LOGO_TEXT } from './topBar.utils';
 
 const TopBar = () => {
     const {
