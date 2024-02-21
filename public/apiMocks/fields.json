@@ -8,35 +8,177 @@
     {
       "id": 2,
       "name": "Location",
-      "type": "GeoFieldData"
+      "type": "TextFieldData",
+      "subType": "geolocation"
     },
     {
       "id": 3,
       "name": "Output Prediction",
       "type": "ChartFieldData",
-      "chartType": "line"
+      "subType": "line"
     },
     {
       "id": 4,
       "name": "Time of Availability",
       "type": "ChartFieldData",
-      "chartType": "boxplot"
+      "subType": "boxplot"
     },
     {
       "id": 5,
       "name": "Certifications",
       "type": "TextFieldData",
-      "textType": "link"
+      "subType": "link"
     }
   ],
   "Gas": [
+    {
+      "id": 1,
+      "name": "Capacity",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 2,
+      "name": "Delivery method",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 3,
+      "name": "Flexibility of Supply",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 4,
+      "name": "Emission Credits or Penalties",
+      "type": "TextFieldData",
+      "subType": "link"
+    },
+    {
+      "id": 5,
+      "name": "Contract Length",
+      "type": "TextFieldData",
+      "subType": "dateTime"
+    }
   ],
   "Wind": [
+    {
+      "id": 1,
+      "name": "Capacity",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 2,
+      "name": "Location",
+      "type": "TextFieldData",
+      "subType": "geolocation"
+    },
+    {
+      "id": 3,
+      "name": "Turbine Efficiency",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 4,
+      "name": "Time of Availability",
+      "type": "ChartFieldData",
+      "subType": "boxplot"
+    },
+    {
+      "id": 5,
+      "name": "Certifications",
+      "type": "TextFieldData",
+      "subType": "link"
+    }
   ],
   "Hydro": [
+    {
+      "id": 1,
+      "name": "Capacity",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 2,
+      "name": "Reservoir Level",
+      "type": "ChartFieldData",
+      "subType": "line"
+    },
+    {
+      "id": 3,
+      "name": "Regulatory Compliance",
+      "type": "TextFieldData",
+      "subType": "link"
+    },
+    {
+      "id": 4,
+      "name": "Flexibility of Supply",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 5,
+      "name": "Energy Storage",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 6,
+      "name": "Water Flow Rate",
+      "type": "TextFieldData"
+    }
   ],
   "Kinetic": [
+    {
+      "id": 1,
+      "name": "Capacity",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 2,
+      "name": "Location",
+      "type": "TextFieldData",
+      "subType": "geolocation"
+    },
+    {
+      "id": 3,
+      "name": "Energy Conversion Efficiency",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 4,
+      "name": "Predictability of Source",
+      "type": "TextFieldData"
+    }
   ],
   "Thermal": [
+    {
+      "id": 1,
+      "name": "Capacity",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 2,
+      "name": "Heat Source Stability",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 3,
+      "name": "Temperature Gradient",
+      "type": "TextFieldData",
+      "subType": "link"
+    },
+    {
+      "id": 4,
+      "name": "Conversion Efficiency",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 5,
+      "name": "Location",
+      "type": "TextFieldData",
+      "subType": "geolocation"
+    },
+    {
+      "id": 5,
+      "name": "Environmental Impact and Regulation",
+      "type": "TextFieldData",
+      "subType": "link"
+    }
   ]
 }

@@ -12,7 +12,33 @@
     "paymentTerms": {
       "paymentMethod": "Wire Transfer",
       "paymentDate": "15th of each month"
-    }
+    },
+    "customFields": [
+      {
+        "id": 1,
+        "value": "500 MW"
+      },
+      {
+        "id": 2,
+        "value": "89%"
+      },
+      {
+        "id": 3,
+        "value": "https://cdn.savemyexams.com/cdn-cgi/image/f=auto,width=1920/uploads/2023/07/2-1-10-temperature-gradient-diagram-png-ib-2025-physics.png"
+      },
+      {
+        "id": 4,
+        "value": "3.5%"
+      },
+      {
+        "id": 5,
+        "value": "64°08'32.0\"N 21°56'26.8\"W"
+      },
+      {
+        "id": 6,
+        "value": "https://justenergy.com/blog/thermal-energy-what-it-is-how-it-works-environmental-impact/"
+      }
+    ]
   },
   {
     "id": 3996,
@@ -27,7 +53,149 @@
     "paymentTerms": {
       "paymentMethod": "Credit Card",
       "paymentDate": "13th of each month"
-    }
+    },
+    "customFields": [
+      {
+        "id": 1,
+        "value": "1950 MW"
+      },
+      {
+        "id": 2,
+        "value": [
+          {
+            "label": "2018",
+            "value": "98"
+          },
+          {
+            "label": "2019",
+            "value": "93"
+          },
+          {
+            "label": "2020",
+            "value": "86"
+          },
+          {
+            "label": "2021",
+            "value": "88"
+          },
+          {
+            "label": "2022",
+            "value": "83"
+          },
+          {
+            "label": "2023",
+            "value": "87"
+          },
+          {
+            "label": "2024",
+            "value": "91"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "value": "https://damsafety.org/sites/default/files/files/Dam%20Safety%20An%20Owner%27s%20Guidance%20Manual.pdf"
+      },
+      {
+        "id": 4,
+        "value": "980 MW - 1950 MW"
+      },
+      {
+        "id": 5,
+        "value": "9000 MW"
+      },
+      {
+        "id": 6,
+        "value": "8 km/h"
+      }
+    ]
+  },
+  {
+    "id": 3992,
+    "source": "Wind",
+    "price": "$19.90",
+    "minimumPurchaseQuantity": 550,
+    "contractTerms": {
+      "duration": "2 years",
+      "penalty": "25% of remaining contract value",
+      "legalConditions": "Refer to standard contract terms"
+    },
+    "paymentTerms": {
+      "paymentMethod": "Credit Card",
+      "paymentDate": "25th of each month"
+    },
+    "customFields": [
+      {
+        "id": 1,
+        "value": "110 MW"
+      },
+      {
+        "id": 2,
+        "value": "18°03'03.5\"N 120°35'26.5\"E"
+      },
+      {
+        "id": 3,
+        "value": "40%"
+      },
+      {
+        "id": 4,
+        "value": [
+          {
+            "label": "Mon",
+            "value": [
+              "05:16:36",
+              "21:19:47"
+            ]
+          },
+          {
+            "label": "Tue",
+            "value": [
+              "05:18:36",
+              "21:15:47"
+            ]
+          },
+          {
+            "label": "Wed",
+            "value": [
+              "05:24:36",
+              "21:12:47"
+            ]
+          },
+          {
+            "label": "Thu",
+            "value": [
+              "05:26:36",
+              "21:11:47"
+            ]
+          },
+          {
+            "label": "Fri",
+            "value": [
+              "05:29:36",
+              "21:09:47"
+            ]
+          },
+          {
+            "label": "Sat",
+            "value": [
+              "05:32:36",
+              "21:06:47"
+            ]
+          },
+          {
+            "label": "Sun",
+            "value": [
+              "05:35:36",
+              "21:01:47"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "value": "https://assets-global.website-files.com/603d0d2db8ec32ba7d44fffe/603d0e327eb2748c8ab1053f_loremipsum.pdf"
+      }
+    ]
   },
   {
     "id": 2359,
@@ -42,7 +210,25 @@
     "paymentTerms": {
       "paymentMethod": "ACH",
       "paymentDate": "11th of each month"
-    }
+    },
+    "customFields": [
+      {
+        "id": 1,
+        "value": "120 kW"
+      },
+      {
+        "id": 2,
+        "value": "45°49'06.3\"N 9°05'42.2\"E"
+      },
+      {
+        "id": 3,
+        "value": "43%"
+      },
+      {
+        "id": 4,
+        "value": "Reliable and efficient turbines"
+      }
+    ]
   },
   {
     "id": 2953,
@@ -195,7 +381,33 @@
     "paymentTerms": {
       "paymentMethod": "Credit Card",
       "paymentDate": "8th of each month"
-    }
+    },
+    "customFields": [
+      {
+        "id": 1,
+        "value": "400 MW"
+      },
+      {
+        "id": 2,
+        "value": "Distribution pipeline system"
+      },
+      {
+        "id": 3,
+        "value": "150 MW - 400 MW"
+      },
+      {
+        "id": 4,
+        "value": "https://www.sciencedirect.com/science/article/abs/pii/S1750583612002988"
+      },
+      {
+        "id": 5,
+        "value": "2026-02-21T18:26:27.430Z"
+      },
+      {
+        "id": 6,
+        "value": "2026-02-21T18:26:27.430Z"
+      }
+    ]
   },
   {
     "id": 3370,
@@ -210,7 +422,29 @@
     "paymentTerms": {
       "paymentMethod": "Credit Card",
       "paymentDate": "17th of each month"
-    }
+    },
+    "customFields": [
+      {
+        "id": 1,
+        "value": "750 MW"
+      },
+      {
+        "id": 2,
+        "value": "Gathering pipeline system"
+      },
+      {
+        "id": 3,
+        "value": "400 MW - 750 MW"
+      },
+      {
+        "id": 4,
+        "value": "https://www.sciencedirect.com/science/article/abs/pii/S1750583612002988"
+      },
+      {
+        "id": 6,
+        "value": "2024-02-21T18:26:27.430Z"
+      }
+    ]
   },
   {
     "id": 2409,

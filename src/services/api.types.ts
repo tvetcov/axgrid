@@ -9,8 +9,7 @@ export enum ENERGY_SOURCE_ID {
 
 export enum FIELD_TYPES {
     TextFieldData = 'TextFieldData',
-    GeoFieldData = 'GeoFieldData',
-    ChartFieldData = 'GraphFieldData',
+    ChartFieldData = 'ChartFieldData'
 }
 
 export interface EnergySource {
