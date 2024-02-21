@@ -19,7 +19,6 @@ import { Route as rootRoute } from './routes/__root'
 const DashboardLazyImport = createFileRoute('/dashboard')()
 const IndexLazyImport = createFileRoute('/')()
 const DashboardIndexLazyImport = createFileRoute('/dashboard/')()
-const DashboardTradingLazyImport = createFileRoute('/dashboard/trading')()
 
 // Create/Update Routes
 
@@ -40,13 +39,6 @@ const DashboardIndexLazyRoute = DashboardIndexLazyImport.update({
   import('./routes/dashboard.index.lazy').then((d) => d.Route),
 )
 
-const DashboardTradingLazyRoute = DashboardTradingLazyImport.update({
-  path: '/trading',
-  getParentRoute: () => DashboardLazyRoute,
-} as any).lazy(() =>
-  import('./routes/dashboard.trading.lazy').then((d) => d.Route),
-)
-
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -59,10 +51,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLazyImport
       parentRoute: typeof rootRoute
     }
-    '/dashboard/trading': {
-      preLoaderRoute: typeof DashboardTradingLazyImport
-      parentRoute: typeof DashboardLazyImport
-    }
     '/dashboard/': {
       preLoaderRoute: typeof DashboardIndexLazyImport
       parentRoute: typeof DashboardLazyImport
@@ -74,10 +62,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
-  DashboardLazyRoute.addChildren([
-    DashboardTradingLazyRoute,
-    DashboardIndexLazyRoute,
-  ]),
+  DashboardLazyRoute.addChildren([DashboardIndexLazyRoute]),
 ])
 
 /* prettier-ignore-end */

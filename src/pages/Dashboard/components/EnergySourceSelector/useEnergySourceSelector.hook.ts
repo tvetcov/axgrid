@@ -5,8 +5,12 @@ import { ENERGY_SOURCE_ID } from 'services/api.types';
 import { getUniqueSourceNames } from './energySourceSelector.utils.ts';
 
 const useEnergySourceSelector = () => {
-    const { setEnergyType, energyType, availableEnergySources } =
-        useDashboardContext();
+    const {
+        setEnergyType,
+        energyType,
+        availableEnergySources,
+        filteredEnergySources
+    } = useDashboardContext();
 
     const handleEnergyTypeChange = (
         _: MouseEvent<HTMLElement>,
@@ -20,7 +24,7 @@ const useEnergySourceSelector = () => {
     return {
         energyType,
         handleEnergyTypeChange,
-        availableEnergySources,
+        filteredEnergySources,
         availableEnergySourceNames: getUniqueSourceNames(availableEnergySources)
     };
 };

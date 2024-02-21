@@ -15,7 +15,7 @@ const EnergySourceSelector = () => {
         energyType,
         handleEnergyTypeChange,
         availableEnergySourceNames,
-        availableEnergySources
+        filteredEnergySources
     } = useEnergySourceSelector();
 
     return (
@@ -44,7 +44,7 @@ const EnergySourceSelector = () => {
             </Box>
             <Box sx={{ mt: 2 }}>
                 <DataTable<EnergySource>
-                    rows={availableEnergySources}
+                    rows={filteredEnergySources}
                     rowIdKey="id"
                 />
             </Box>

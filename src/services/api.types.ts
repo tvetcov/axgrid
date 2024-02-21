@@ -12,6 +12,29 @@ export enum FIELD_TYPES {
     ChartFieldData = 'ChartFieldData'
 }
 
+export enum FIELD_SUBTYPES {
+    geolocation = 'geolocation',
+    line = 'line',
+    boxplot = 'boxplot',
+    link = 'link',
+    dateTime = 'dateTime'
+}
+
+export type FieldDefinitions = Record<
+    ENERGY_SOURCE_ID,
+    {
+        id: number;
+        name: string;
+        type: FIELD_TYPES;
+        subType: FIELD_SUBTYPES;
+    }[]
+>;
+
+interface CustomField {
+    id: number;
+    value: string | { label: string; value: string | string[] }[];
+}
+
 export interface EnergySource {
     id: number;
     source: ENERGY_SOURCE_ID;
@@ -19,6 +42,7 @@ export interface EnergySource {
     minimumPurchaseQuantity: number;
     contractTerms: ContractTerms;
     paymentTerms: PaymentTerms;
+    customFields: CustomField[];
 }
 
 interface ContractTerms {

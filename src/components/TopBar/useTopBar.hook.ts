@@ -34,10 +34,6 @@ const useTopBar = () => {
         {
             title: 'Dashboard',
             onClick: () => navigate(ROUTE_LIST.dashboard)
-        },
-        {
-            title: 'Trading',
-            onClick: () => navigate(ROUTE_LIST.trading)
         }
     ];
 

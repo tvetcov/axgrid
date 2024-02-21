@@ -9,23 +9,32 @@ interface DashboardContextProps extends IDashboardContext {
 
 const DashboardContextProvider = ({
     children,
+    fieldDefinitions,
     energyType,
     setEnergyType,
     availableEnergySources,
-    setAvailableEnergySources
+    setAvailableEnergySources,
+    filteredEnergySources,
+    setFilteredEnergySources
 }: DashboardContextProps) => {
     const contextValue = useMemo(() => {
         return {
+            fieldDefinitions,
             energyType,
             setEnergyType,
             availableEnergySources,
-            setAvailableEnergySources
+            setAvailableEnergySources,
+            filteredEnergySources,
+            setFilteredEnergySources
         };
     }, [
+        fieldDefinitions,
         energyType,
         setEnergyType,
         availableEnergySources,
-        setAvailableEnergySources
+        setAvailableEnergySources,
+        filteredEnergySources,
+        setFilteredEnergySources
     ]);
 
     return (

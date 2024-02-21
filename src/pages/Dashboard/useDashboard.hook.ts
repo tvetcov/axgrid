@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { ENERGY_SOURCE_ID, EnergySource } from 'services/api.types';
+import {
+    ENERGY_SOURCE_ID,
+    EnergySource,
+    FieldDefinitions
+} from 'services/api.types';
 import { timeout } from 'utils/utils';
 
 const useDashboard = () => {
@@ -10,22 +14,43 @@ const useDashboard = () => {
     const [availableEnergySources, setAvailableEnergySources] = useState<
         EnergySource[]
     >([]);
+    const [filteredEnergySources, setFilteredEnergySources] = useState<
+        EnergySource[]
+    >([]);
+    const [fieldDefinitions, setFieldDefinitions] =
+        useState<FieldDefinitions | null>(null);
 
     useEffect(() => {
-        void fetch('./apiMocks/energySources.json').then(async response => {
+        const filteredSources = availableEnergySources.filter(
+            source => source.source === energyType
+        );
+
+        setFilteredEnergySources(filteredSources);
+    }, [availableEnergySources, energyType]);
+
+    useEffect(() => {
+        void Promise.all([
+            fetch('./apiMocks/energySources.json'),
+            fetch('./apiMocks/fields.json')
+        ]).then(async ([energySources, fields]) => {
             await timeout(250);
 
-            const data = (await response.json()) as EnergySource[];
+            const sourcesData = (await energySources.json()) as EnergySource[];
+            const fieldData = (await fields.json()) as FieldDefinitions;
 
-            setAvailableEnergySources(data);
+            setAvailableEnergySources(sourcesData);
+            setFieldDefinitions(fieldData);
         });
     }, []);
 
     return {
+        fieldDefinitions,
         energyType,
         availableEnergySources,
         setEnergyType,
-        setAvailableEnergySources
+        setAvailableEnergySources,
+        filteredEnergySources,
+        setFilteredEnergySources
     };
 };
 

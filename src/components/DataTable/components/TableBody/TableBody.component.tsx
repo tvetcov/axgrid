@@ -16,7 +16,6 @@ const TableBody = <T,>({
     selected,
     defaultColumns
 }: DataTableBodyProps<T>) => {
-
     return (
         <MuiTableBody>
             {visibleRows.map((row, index) => {
