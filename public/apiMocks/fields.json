@@ -1,0 +1,42 @@
+{
+  "Solar": [
+    {
+      "id": 1,
+      "name": "Capacity",
+      "type": "TextFieldData"
+    },
+    {
+      "id": 2,
+      "name": "Location",
+      "type": "GeoFieldData"
+    },
+    {
+      "id": 3,
+      "name": "Output Prediction",
+      "type": "ChartFieldData",
+      "chartType": "line"
+    },
+    {
+      "id": 4,
+      "name": "Time of Availability",
+      "type": "ChartFieldData",
+      "chartType": "boxplot"
+    },
+    {
+      "id": 5,
+      "name": "Certifications",
+      "type": "TextFieldData",
+      "textType": "link"
+    }
+  ],
+  "Gas": [
+  ],
+  "Wind": [
+  ],
+  "Hydro": [
+  ],
+  "Kinetic": [
+  ],
+  "Thermal": [
+  ]
+}

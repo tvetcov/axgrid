@@ -7,6 +7,12 @@ export enum ENERGY_SOURCE_ID {
     Thermal = 'Thermal'
 }
 
+export enum FIELD_TYPES {
+    TextFieldData = 'TextFieldData',
+    GeoFieldData = 'GeoFieldData',
+    ChartFieldData = 'GraphFieldData',
+}
+
 export interface EnergySource {
     id: number;
     source: ENERGY_SOURCE_ID;

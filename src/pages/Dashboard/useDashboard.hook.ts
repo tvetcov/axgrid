@@ -12,7 +12,7 @@ const useDashboard = () => {
     >([]);
 
     useEffect(() => {
-        void fetch('./EnergySources.json').then(async response => {
+        void fetch('./apiMocks/energySources.json').then(async response => {
             await timeout(250);
 
             const data = (await response.json()) as EnergySource[];
