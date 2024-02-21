@@ -1,6 +1,6 @@
 import EnergySourceSelector from './components/EnergySourceSelector';
 import DashboardContextProvider from './context/DashboardContext.provider';
-import { useDashboard } from './useDashboard.hook';
+import useDashboard from './useDashboard.hook';
 
 const Dashboard = () => {
     const {
@@ -17,9 +17,7 @@ const Dashboard = () => {
             availableEnergySources={availableEnergySources}
             setAvailableEnergySources={setAvailableEnergySources}
         >
-            <div>
-                <EnergySourceSelector />
-            </div>
+            <EnergySourceSelector />
         </DashboardContextProvider>
     );
 };

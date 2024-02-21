@@ -3,7 +3,7 @@ import { MouseEvent, useState } from 'react';
 import useNavigateTo from 'hooks/useNavigateTo.hook';
 import { ROUTE_LIST } from 'pages/routes';
 
-export const useTopBar = () => {
+const useTopBar = () => {
     const navigate = useNavigateTo();
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -52,3 +52,5 @@ export const useTopBar = () => {
         handleCloseUserMenu
     };
 };
+
+export default useTopBar;

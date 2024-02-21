@@ -1,10 +1,10 @@
 import { createContext } from 'react';
 
 import { IDashboardContext } from 'pages/Dashboard/dashboard.types';
-import { ENERGY_SOURCE } from 'services/api.types';
+import { ENERGY_SOURCE_ID } from 'services/api.types';
 
 export const DashboardContext = createContext<IDashboardContext>({
-    energyType: ENERGY_SOURCE.Solar,
+    energyType: ENERGY_SOURCE_ID.Solar,
     setEnergyType: () => {},
     availableEnergySources: [],
     setAvailableEnergySources: () => {}

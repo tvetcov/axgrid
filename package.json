@@ -1,14 +1,14 @@
 {
     "name": "axgrid",
     "private": true,
-    "version": "0.0.0",
+    "version": "0.0.1",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "GENERATE_SOURCEMAP=false tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview",
-        "pretty": "npx prettier --write ."
+        "pretty": "npx prettier --write .",
+        "preview": "vite preview"
     },
     "dependencies": {
         "@emotion/react": "^11.11.3",
@@ -29,6 +29,9 @@
         "@typescript-eslint/parser": "^6.21.0",
         "@vitejs/plugin-react": "^4.2.1",
         "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.5",
         "json-loader": "^0.5.7",

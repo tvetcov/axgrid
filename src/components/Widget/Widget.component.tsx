@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -13,7 +14,7 @@ const Widget = ({
     title: string;
     subtitle?: string;
     icon?: React.JSX.Element;
-    children: React.JSX.Element;
+    children: ReactNode;
 }) => {
     return (
         <Paper sx={widgetStyles.root}>

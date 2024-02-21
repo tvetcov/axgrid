@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import { ENERGY_SOURCE, EnergySource } from 'services/api.types';
+import { ENERGY_SOURCE_ID, EnergySource } from 'services/api.types';
 import { timeout } from 'utils/utils';
 
-export const useDashboard = () => {
-    const [energyType, setEnergyType] = useState<ENERGY_SOURCE>(
-        ENERGY_SOURCE.Solar
+const useDashboard = () => {
+    const [energyType, setEnergyType] = useState<ENERGY_SOURCE_ID>(
+        ENERGY_SOURCE_ID.Thermal
     );
     const [availableEnergySources, setAvailableEnergySources] = useState<
-        ENERGY_SOURCE[]
+        EnergySource[]
     >([]);
 
     useEffect(() => {
@@ -16,11 +16,8 @@ export const useDashboard = () => {
             await timeout(250);
 
             const data = (await response.json()) as EnergySource[];
-            const sources = [
-                ...new Set(data.map(energyType => energyType.source))
-            ];
 
-            setAvailableEnergySources(sources);
+            setAvailableEnergySources(data);
         });
     }, []);
 
@@ -31,3 +28,5 @@ export const useDashboard = () => {
         setAvailableEnergySources
     };
 };
+
+export default useDashboard;

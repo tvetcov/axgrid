@@ -1,4 +1,4 @@
-export enum ENERGY_SOURCE {
+export enum ENERGY_SOURCE_ID {
     Solar = 'Solar',
     Gas = 'Gas',
     Wind = 'Wind',
@@ -9,7 +9,7 @@ export enum ENERGY_SOURCE {
 
 export interface EnergySource {
     id: number;
-    source: ENERGY_SOURCE;
+    source: ENERGY_SOURCE_ID;
     price: string;
     minimumPurchaseQuantity: number;
     contractTerms: ContractTerms;
