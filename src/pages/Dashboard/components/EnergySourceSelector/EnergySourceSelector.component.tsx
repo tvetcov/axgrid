@@ -6,7 +6,7 @@ import Widget from 'components/Widget';
 import DataTable from 'components/DataTable';
 import EnergyIcon from 'pages/Dashboard/components/EnergyIcon';
 
-import { EnergySource } from 'services/api.types.ts';
+import { EnergySource } from 'services/api.types';
 import useEnergySourceSelector from './useEnergySourceSelector.hook';
 import { energySourceSelectorStyles } from './EnergySourceSelector.styles';
 
@@ -15,7 +15,8 @@ const EnergySourceSelector = () => {
         energyType,
         handleEnergyTypeChange,
         availableEnergySourceNames,
-        filteredEnergySources
+        filteredEnergySources,
+        tableColumns
     } = useEnergySourceSelector();
 
     return (
@@ -45,6 +46,7 @@ const EnergySourceSelector = () => {
             <Box sx={{ mt: 2 }}>
                 <DataTable<EnergySource>
                     rows={filteredEnergySources}
+                    columns={tableColumns}
                     rowIdKey="id"
                 />
             </Box>

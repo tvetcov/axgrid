@@ -1,11 +1,7 @@
 import { ChangeEvent, MouseEvent, useMemo, useState } from 'react';
 
-import {
-    getComparator,
-    getDefaultColumns,
-    stableSort
-} from './dataTable.utils.ts';
-import { Order } from './dataTable.types.ts';
+import { getComparator, stableSort } from './dataTable.utils';
+import { Order } from './dataTable.types';
 
 const useDataTable = <T, K extends keyof T>({
     rows,
@@ -15,12 +11,12 @@ const useDataTable = <T, K extends keyof T>({
     rowIdKey: K;
 }) => {
     const [order, setOrder] = useState<Order>('asc');
-    const [orderBy, setOrderBy] = useState<K>(rowIdKey);
+    const [orderBy, setOrderBy] = useState<string>(rowIdKey as string);
     const [selected, setSelected] = useState<T[K][]>([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
-    const handleRequestSort = (_: MouseEvent<unknown>, property: K) => {
+    const handleRequestSort = (_: MouseEvent<unknown>, property: string) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
         setOrderBy(property);
@@ -67,11 +63,9 @@ const useDataTable = <T, K extends keyof T>({
     const emptyRows =
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-    const defaultColumns = getDefaultColumns<T>(rows?.[0]);
-
     const visibleRows: T[] = useMemo(
         () =>
-            stableSort<T>(rows, getComparator<T, K>(order, orderBy)).slice(
+            stableSort<T>(rows, getComparator<T>(order, orderBy)).slice(
                 page * rowsPerPage,
                 page * rowsPerPage + rowsPerPage
             ),
@@ -91,8 +85,7 @@ const useDataTable = <T, K extends keyof T>({
         page,
         handleChangePage,
         handleChangeRowsPerPage,
-        rows,
-        defaultColumns
+        rows
     };
 };
 

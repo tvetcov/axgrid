@@ -1,22 +1,22 @@
-import { ChangeEvent, MouseEvent } from 'react';
+import { ChangeEvent, MouseEvent, ReactNode } from 'react';
 
 export type Order = 'asc' | 'desc';
 
-export interface HeadCell<T> {
-    disablePadding: boolean;
-    id: keyof T;
+export interface HeadCell<T = unknown> {
+    id: string;
     label: string;
-    numeric: boolean;
+    cellRenderer: (row: T) => ReactNode;
+    width: number;
 }
 
-export interface DataTableHeaderProps<T> {
+export interface DataTableHeaderProps {
     numSelected: number;
-    onRequestSort: (event: MouseEvent<unknown>, property: keyof T) => void;
+    onRequestSort: (event: MouseEvent<unknown>, property: string) => void;
     onSelectAllClick: (event: ChangeEvent<HTMLInputElement>) => void;
     order: Order;
-    orderBy: keyof T;
+    orderBy: string;
     rowCount: number;
-    headCells: HeadCell<T>[];
+    headCells: HeadCell[];
 }
 
 export interface DataTableBodyProps<T> {
@@ -25,7 +25,7 @@ export interface DataTableBodyProps<T> {
     emptyRows: number;
     rowIdKey: keyof T;
     selected: T[keyof T][];
-    defaultColumns: HeadCell<T>[];
+    defaultColumns: HeadCell[];
 }
 
 export interface Data {

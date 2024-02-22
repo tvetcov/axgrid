@@ -3,17 +3,22 @@ import Table from '@mui/material/Table';
 import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 
-import DataTableToolbar from './components/Toolbar';
+import TableToolbar from './components/Toolbar';
 import TableBody from './components/TableBody';
-import useDataTable from './useDataTable.hook';
 import TableHeader from './components/TableHeader';
+
+import useDataTable from './useDataTable.hook';
+import { HeadCell } from './dataTable.types';
 
 interface DataTableProps<T> {
     rows: T[];
+    columns: HeadCell[];
     rowIdKey: keyof T;
 }
 
-const DataTable = <T,>({ rows, rowIdKey }: DataTableProps<T>) => {
+const ROWS_PER_PAGE = [5, 10, 25];
+
+const DataTable = <T,>({ rows, rowIdKey, columns }: DataTableProps<T>) => {
     const {
         selected,
         order,
@@ -26,28 +31,27 @@ const DataTable = <T,>({ rows, rowIdKey }: DataTableProps<T>) => {
         rowsPerPage,
         page,
         handleChangePage,
-        handleChangeRowsPerPage,
-        defaultColumns
+        handleChangeRowsPerPage
     } = useDataTable<T, keyof T>({ rows, rowIdKey });
 
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ width: '100%', mb: 2 }}>
-                <DataTableToolbar numSelected={selected.length} />
+                <TableToolbar numSelected={selected.length} />
                 <TableContainer>
                     <Table
                         sx={{ minWidth: 750 }}
                         aria-labelledby="tableTitle"
-                        size="medium"
+                        size="small"
                     >
-                        <TableHeader<T>
+                        <TableHeader
                             numSelected={selected.length}
                             order={order}
                             orderBy={orderBy}
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
                             rowCount={rows.length}
-                            headCells={defaultColumns}
+                            headCells={columns}
                         />
                         <TableBody<T>
                             visibleRows={visibleRows}
@@ -55,12 +59,12 @@ const DataTable = <T,>({ rows, rowIdKey }: DataTableProps<T>) => {
                             emptyRows={emptyRows}
                             rowIdKey={rowIdKey}
                             selected={selected}
-                            defaultColumns={defaultColumns}
+                            defaultColumns={columns}
                         />
                     </Table>
                 </TableContainer>
                 <TablePagination
-                    rowsPerPageOptions={[5, 10, 25]}
+                    rowsPerPageOptions={ROWS_PER_PAGE}
                     count={rows.length}
                     rowsPerPage={rowsPerPage}
                     page={page}

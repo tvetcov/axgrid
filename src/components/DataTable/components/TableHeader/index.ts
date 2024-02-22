@@ -1,3 +1,3 @@
-import TableHeader from './TableHeader.component.tsx';
+import TableHeader from './TableHeader.component';
 
 export default TableHeader;

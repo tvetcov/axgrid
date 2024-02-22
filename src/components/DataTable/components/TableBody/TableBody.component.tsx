@@ -1,12 +1,10 @@
-import { ReactNode } from 'react';
-
 import MuiTableBody from '@mui/material/TableBody';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import Checkbox from '@mui/material/Checkbox';
 
-import { isSelected } from 'components/DataTable/dataTable.utils.ts';
-import { DataTableBodyProps } from 'components/DataTable/dataTable.types.ts';
+import { isSelected } from 'components/DataTable/dataTable.utils';
+import { DataTableBodyProps } from 'components/DataTable/dataTable.types';
 
 const TableBody = <T,>({
     visibleRows,
@@ -43,20 +41,10 @@ const TableBody = <T,>({
                             />
                         </TableCell>
                         {defaultColumns.map(column => {
-                            // TODO add dynamic cell renderer
-                            const value = row[column.id] as ReactNode;
-
                             return (
-                                typeof value !== 'object' && (
-                                    <TableCell
-                                        key={String(column.id)}
-                                        align={
-                                            column.numeric ? 'right' : 'left'
-                                        }
-                                    >
-                                        {value}
-                                    </TableCell>
-                                )
+                                <TableCell key={String(column.id)}>
+                                    {column.cellRenderer(row)}
+                                </TableCell>
                             );
                         })}
                     </TableRow>
@@ -65,7 +53,7 @@ const TableBody = <T,>({
             {emptyRows > 0 && (
                 <TableRow
                     style={{
-                        height: 53 * emptyRows
+                        height: 33 * emptyRows
                     }}
                 >
                     <TableCell colSpan={6} />

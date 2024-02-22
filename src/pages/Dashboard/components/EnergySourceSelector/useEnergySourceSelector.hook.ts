@@ -2,14 +2,18 @@ import { MouseEvent } from 'react';
 
 import { useDashboardContext } from 'pages/Dashboard/context/useDashboardContext';
 import { ENERGY_SOURCE_ID } from 'services/api.types';
-import { getUniqueSourceNames } from './energySourceSelector.utils.ts';
+import {
+    getTableColumns,
+    getUniqueSourceNames
+} from './energySourceSelector.utils';
 
 const useEnergySourceSelector = () => {
     const {
         setEnergyType,
         energyType,
         availableEnergySources,
-        filteredEnergySources
+        filteredEnergySources,
+        fieldDefinitions
     } = useDashboardContext();
 
     const handleEnergyTypeChange = (
@@ -25,6 +29,9 @@ const useEnergySourceSelector = () => {
         energyType,
         handleEnergyTypeChange,
         filteredEnergySources,
+        tableColumns: filteredEnergySources[0]
+            ? getTableColumns(filteredEnergySources[0], fieldDefinitions)
+            : [],
         availableEnergySourceNames: getUniqueSourceNames(availableEnergySources)
     };
 };

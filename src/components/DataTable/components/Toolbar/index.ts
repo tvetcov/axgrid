@@ -1,3 +1,3 @@
-import Toolbar from './Toolbar.component.tsx';
+import Toolbar from './Toolbar.component';
 
 export default Toolbar;

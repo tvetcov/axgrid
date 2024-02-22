@@ -1,4 +1,4 @@
-import { HeadCell, Order } from './dataTable.types.ts';
+import { Order } from '../dataTable.types';
 
 export const isSelected = <T>(id: T[keyof T], selected: T[keyof T][]) =>
     selected.indexOf(id) !== -1;
@@ -25,21 +25,8 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
     return 0;
 }
 
-export function getComparator<T, K extends keyof T>(order: Order, orderBy: K) {
+export function getComparator<T>(order: Order, orderBy: string) {
     return order === 'desc'
-        ? (a: T, b: T) => descendingComparator<T>(a, b, orderBy)
-        : (a: T, b: T) => -descendingComparator<T>(a, b, orderBy);
+        ? (a: T, b: T) => descendingComparator<T>(a, b, orderBy as keyof T)
+        : (a: T, b: T) => -descendingComparator<T>(a, b, orderBy as keyof T);
 }
-
-export const getDefaultColumns = <T>(row: T): HeadCell<T>[] => {
-    if (!row) return [];
-
-    const keys = Object.keys(row as Record<string, unknown>) || [];
-
-    return keys.map((key: string) => ({
-        id: key as keyof T,
-        label: key,
-        numeric: typeof row[key as keyof T] === 'number',
-        disablePadding: false
-    }));
-};

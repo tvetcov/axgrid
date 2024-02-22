@@ -1,6 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { ENERGY_SOURCE_ID, EnergySource, FieldDefinitions } from 'services/api.types';
+import {
+    ENERGY_SOURCE_ID,
+    EnergySource,
+    FieldDefinitions
+} from 'services/api.types';
 
 export interface IDashboardContext {
     fieldDefinitions: FieldDefinitions;

@@ -1,7 +1,7 @@
+import { FieldDefinitions } from 'services/api.types';
 import EnergySourceSelector from './components/EnergySourceSelector';
 import DashboardContextProvider from './context/DashboardContext.provider';
 import useDashboard from './useDashboard.hook';
-import { FieldDefinitions } from '../../services/api.types.ts';
 
 const Dashboard = () => {
     const {

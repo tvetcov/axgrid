@@ -26,30 +26,30 @@ const theme = createTheme({
         divider: '#1CB191'
     },
     typography: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeightLight: 400,
         fontWeightRegular: 500,
         fontWeightMedium: 600,
         h2: {
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: 700,
             lineHeight: 1.33
         },
         h3: {
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: 600,
             lineHeight: 1.21
         },
         subtitle1: {
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: 600
         },
         subtitle2: {
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: 500
         },
         button: {
-            fontSize: 14,
+            fontSize: 12,
             lineHeight: 1.5
         },
         caption: {
@@ -58,7 +58,7 @@ const theme = createTheme({
         },
         h4: {
             fontWeight: 700,
-            fontSize: 18
+            fontSize: 16
         },
         fontFamily: 'Manrope'
     }
