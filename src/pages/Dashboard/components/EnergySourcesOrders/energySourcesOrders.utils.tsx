@@ -1,7 +1,12 @@
-import { EnergySource, FieldDefinitions } from 'services/api.types';
-import { HeadCell } from 'components/DataTable/dataTable.types.ts';
+import {
+    ENERGY_SOURCE_ID,
+    EnergySource,
+    FieldDefinitions
+} from 'services/api.types';
+import { HeadCell } from 'components/DataTable/dataTable.types';
 
-import ListCell from 'components/Cells/ListCell.component.tsx';
+import ListCell from 'components/Cells/ListCell.component';
+import FieldSwitchCell from 'components/FieldSwitchCell';
 
 export const getUniqueSourceNames = (sources: EnergySource[]) => {
     return [...new Set(sources.map(energySource => energySource.source))];
@@ -22,8 +27,8 @@ export const DEFAULT_COLUMNS: HeadCell<EnergySource>[] = [
     },
     {
         id: 'minimumPurchaseQuantity',
-        label: 'Minimum Purchase Quantity',
-        width: 225,
+        label: 'Min Purchase Quantity',
+        width: 185,
         cellRenderer: row => row.minimumPurchaseQuantity
     },
     {
@@ -70,30 +75,32 @@ export const DEFAULT_COLUMNS: HeadCell<EnergySource>[] = [
     }
 ];
 
-export const getTableColumns = (
-    filteredEnergySource: EnergySource,
-    fieldDefinitions: FieldDefinitions
-): HeadCell<EnergySource>[] => {
-    const columns = filteredEnergySource.customFields.map(customField => {
-        const fieldDefinition = fieldDefinitions[
-            filteredEnergySource.source
-        ].find(definition => definition.id === customField.id);
+export const getTableColumns = ({
+    energySourceId,
+    fieldDefinitions
+}: {
+    energySourceId: ENERGY_SOURCE_ID;
+    fieldDefinitions: FieldDefinitions;
+}): HeadCell<EnergySource>[] => {
+    const sourceDefinitions = fieldDefinitions[energySourceId];
 
-        return {
-            id: String(customField.id),
-            label: fieldDefinition?.name,
-            width: 170,
-            cellRenderer: (row: EnergySource) => {
-                const value = row.customFields.find(
-                    field => field.id === fieldDefinition?.id
-                )?.value;
+    const columns = sourceDefinitions.map(fieldDefinition => ({
+        id: String(fieldDefinition.id),
+        label: fieldDefinition.name,
+        width: 170,
+        cellRenderer: (row: EnergySource) => {
+            const customField = row.customFields.find(
+                field => field.id === fieldDefinition.id
+            );
 
-                return Array.isArray(value)
-                    ? value.map(val => val.label).join(', ')
-                    : value;
-            }
-        } as HeadCell<EnergySource>;
-    });
+            return customField?.value ? (
+                <FieldSwitchCell
+                    value={customField?.value}
+                    fieldDefinition={fieldDefinition}
+                />
+            ) : null;
+        }
+    }));
 
     return [...DEFAULT_COLUMNS, ...columns];
 };

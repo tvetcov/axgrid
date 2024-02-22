@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import { getToolbarStyles } from './Toolbar.styles';
+import { getToolbarStyles } from './toolbar.styles.ts';
 
 const Toolbar = ({ numSelected }: { numSelected: number }) => {
     const styles = getToolbarStyles(numSelected);

@@ -2,6 +2,12 @@ import { ChangeEvent, MouseEvent, ReactNode } from 'react';
 
 export type Order = 'asc' | 'desc';
 
+export interface DataTableProps<T> {
+    rows: T[];
+    columns: HeadCell<T>[];
+    rowIdKey: keyof T;
+}
+
 export interface HeadCell<T = unknown> {
     id: string;
     label: string;
@@ -26,13 +32,4 @@ export interface DataTableBodyProps<T> {
     rowIdKey: keyof T;
     selected: T[keyof T][];
     defaultColumns: HeadCell[];
-}
-
-export interface Data {
-    id: number;
-    calories: number;
-    carbs: number;
-    fat: number;
-    name: string;
-    protein: number;
 }

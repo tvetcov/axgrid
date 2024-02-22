@@ -1,4 +1,4 @@
-export const energySourceSelectorStyles = {
+const energySourcesOrdersStyles = {
     button: {
         textTransform: 'none',
         px: 2,
@@ -9,3 +9,5 @@ export const energySourceSelectorStyles = {
         }
     }
 };
+
+export default energySourcesOrdersStyles;

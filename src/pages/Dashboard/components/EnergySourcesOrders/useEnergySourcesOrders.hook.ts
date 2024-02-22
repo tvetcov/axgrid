@@ -1,13 +1,13 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useMemo } from 'react';
 
 import { useDashboardContext } from 'pages/Dashboard/context/useDashboardContext';
 import { ENERGY_SOURCE_ID } from 'services/api.types';
 import {
     getTableColumns,
     getUniqueSourceNames
-} from './energySourceSelector.utils';
+} from './energySourcesOrders.utils.tsx';
 
-const useEnergySourceSelector = () => {
+const useEnergySourcesOrders = () => {
     const {
         setEnergyType,
         energyType,
@@ -25,15 +25,24 @@ const useEnergySourceSelector = () => {
         }
     };
 
+    const tableColumns = useMemo(() => {
+        const energySourceId = filteredEnergySources[0]?.source;
+
+        return energySourceId
+            ? getTableColumns({
+                  energySourceId,
+                  fieldDefinitions
+              })
+            : [];
+    }, [fieldDefinitions, filteredEnergySources]);
+
     return {
         energyType,
         handleEnergyTypeChange,
         filteredEnergySources,
-        tableColumns: filteredEnergySources[0]
-            ? getTableColumns(filteredEnergySources[0], fieldDefinitions)
-            : [],
+        tableColumns,
         availableEnergySourceNames: getUniqueSourceNames(availableEnergySources)
     };
 };
 
-export default useEnergySourceSelector;
+export default useEnergySourcesOrders;

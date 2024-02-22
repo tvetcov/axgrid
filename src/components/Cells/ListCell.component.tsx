@@ -3,7 +3,7 @@ const ListCell = ({ list }: { list: { label: string; value: string }[] }) => {
         <>
             {list.map(listItem => {
                 return (
-                    <div>
+                    <div key={listItem.value}>
                         <b>{listItem.label}:</b> {listItem.value}
                     </div>
                 );

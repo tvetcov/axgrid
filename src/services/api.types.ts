@@ -20,20 +20,23 @@ export enum FIELD_SUBTYPES {
     dateTime = 'dateTime'
 }
 
-export type FieldDefinitions = Record<
-    ENERGY_SOURCE_ID,
-    {
-        id: number;
-        name: string;
-        type: FIELD_TYPES;
-        subType: FIELD_SUBTYPES;
-    }[]
->;
+export type FieldDefinitionItem = {
+    id: number;
+    name: string;
+    type: FIELD_TYPES;
+    subType: FIELD_SUBTYPES;
+};
+
+export type FieldDefinitions = Record<ENERGY_SOURCE_ID, FieldDefinitionItem[]>;
 
 interface CustomField {
     id: number;
-    value: string | { label: string; value: string | string[] }[];
+    value: CustomFieldValue;
 }
+
+export type CustomFieldValue = string | ChartFieldValue;
+
+export type ChartFieldValue = { label: string; value: string | string[] }[];
 
 export interface EnergySource {
     id: number;

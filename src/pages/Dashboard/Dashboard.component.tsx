@@ -1,5 +1,5 @@
 import { FieldDefinitions } from 'services/api.types';
-import EnergySourceSelector from './components/EnergySourceSelector';
+import EnergySourcesOrders from './components/EnergySourcesOrders';
 import DashboardContextProvider from './context/DashboardContext.provider';
 import useDashboard from './useDashboard.hook';
 
@@ -24,7 +24,7 @@ const Dashboard = () => {
             filteredEnergySources={filteredEnergySources}
             setFilteredEnergySources={setFilteredEnergySources}
         >
-            <EnergySourceSelector />
+            <EnergySourcesOrders />
         </DashboardContextProvider>
     );
 };

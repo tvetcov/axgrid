@@ -1,6 +1,6 @@
 import { SxProps } from '@mui/material';
 
-export const widgetStyles: Record<string, SxProps> = {
+const widgetStyles: Record<string, SxProps> = {
     root: {
         m: 2,
         p: 2,
@@ -8,13 +8,11 @@ export const widgetStyles: Record<string, SxProps> = {
         maxHeight: '100%',
         overflow: 'auto'
     },
-    icon: {
+    actionButton: {
         position: 'absolute',
         top: 16,
-        right: 16,
-
-        svg: {
-            fontSize: 48
-        }
+        right: 16
     }
 };
+
+export default widgetStyles;

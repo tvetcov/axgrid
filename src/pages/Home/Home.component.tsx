@@ -5,7 +5,7 @@ import LoginIcon from '@mui/icons-material/Login';
 
 import useNavigateTo from 'hooks/useNavigateTo.hook';
 import { ROUTE_LIST } from 'pages/routes';
-import { homePageStyles } from './Home.styles';
+import { homePageStyles } from './home.styles.ts';
 
 const Home = () => {
     const navigate = useNavigateTo();

@@ -4,13 +4,14 @@ import ToggleButton from '@mui/material/ToggleButton';
 
 import Widget from 'components/Widget';
 import DataTable from 'components/DataTable';
-import EnergyIcon from 'pages/Dashboard/components/EnergyIcon';
 
 import { EnergySource } from 'services/api.types';
-import useEnergySourceSelector from './useEnergySourceSelector.hook';
-import { energySourceSelectorStyles } from './EnergySourceSelector.styles';
+import ActionButton from './components/ActionButton';
+import EnergyIcon from './components/EnergyIcon';
+import useEnergySourceSelector from './useEnergySourcesOrders.hook.ts';
+import energySourcesOrdersStyles from './energySourcesOrders.styles.ts';
 
-const EnergySourceSelector = () => {
+const EnergySourcesOrders = () => {
     const {
         energyType,
         handleEnergyTypeChange,
@@ -23,7 +24,7 @@ const EnergySourceSelector = () => {
         <Widget
             title="Energy Sources"
             subtitle="Displays the currently selected energy source"
-            icon={<EnergyIcon energyType={energyType} />}
+            actionButton={<ActionButton energyType={energyType} />}
         >
             <Box sx={{ mt: 2 }}>
                 <ToggleButtonGroup
@@ -33,7 +34,7 @@ const EnergySourceSelector = () => {
                 >
                     {availableEnergySourceNames.map(energySource => (
                         <ToggleButton
-                            sx={energySourceSelectorStyles.button}
+                            sx={energySourcesOrdersStyles.button}
                             key={energySource}
                             value={energySource}
                         >
@@ -54,4 +55,4 @@ const EnergySourceSelector = () => {
     );
 };
 
-export default EnergySourceSelector;
+export default EnergySourcesOrders;

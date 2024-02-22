@@ -1,4 +1,4 @@
-import { Order } from '../dataTable.types';
+import { Order } from './dataTable.types';
 
 export const isSelected = <T>(id: T[keyof T], selected: T[keyof T][]) =>
     selected.indexOf(id) !== -1;

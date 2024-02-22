@@ -1,19 +1,19 @@
-import { ReactNode } from 'react';
+import { ReactNode, JSX } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import { widgetStyles } from './Widget.styles';
+import widgetStyles from './widget.styles.ts';
 
 const Widget = ({
     title,
     subtitle,
-    icon,
+    actionButton,
     children
 }: {
     title: string;
     subtitle?: string;
-    icon?: React.JSX.Element;
+    actionButton?: JSX.Element;
     children: ReactNode;
 }) => {
     return (
@@ -22,7 +22,9 @@ const Widget = ({
             {subtitle && (
                 <Typography variant="subtitle2">{subtitle}</Typography>
             )}
-            {icon && <Box sx={widgetStyles.icon}>{icon}</Box>}
+            {actionButton && (
+                <Box sx={widgetStyles.actionButton}>{actionButton}</Box>
+            )}
             {children}
         </Paper>
     );

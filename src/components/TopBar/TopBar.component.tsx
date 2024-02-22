@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 import useTopBar from './useTopBar.hook';
-import { topBarStyles } from './TopBar.styles';
+import { topBarStyles } from './topBar.styles.ts';
 import { LOGO_TEXT } from './topBar.utils';
 
 const TopBar = () => {
