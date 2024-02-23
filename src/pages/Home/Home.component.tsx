@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <Box sx={homePageStyles}>
             <Typography variant="h1" mb={3}>
-                AXGrid
+                ⚡AXGrid
             </Typography>
             <Typography variant="caption" mb={4} maxWidth="550px">
                 Trade solar, wind, kinetic, and more in this dynamic platform.

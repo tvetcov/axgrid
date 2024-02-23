@@ -38,7 +38,7 @@ const TopBar = () => {
                         component="a"
                         sx={topBarStyles.logo}
                     >
-                        {LOGO_TEXT}
+                        ⚡{LOGO_TEXT}
                     </Typography>
                     <Box sx={topBarStyles.mobileMenu}>
                         <IconButton
