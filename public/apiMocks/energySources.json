@@ -11,7 +11,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "Wire Transfer",
-            "paymentDate": "15th of each month"
+            "paymentDate": "2024-02-28T22:00:00.000Z"
         },
         "customFields": [
             {
@@ -52,7 +52,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "Credit Card",
-            "paymentDate": "13th of each month"
+            "paymentDate": "2024-03-02T22:00:00.000Z"
         },
         "customFields": [
             {
@@ -122,7 +122,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "Credit Card",
-            "paymentDate": "25th of each month"
+            "paymentDate": "2024-11-18T22:00:00.000Z"
         },
         "customFields": [
             {
@@ -188,7 +188,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "ACH",
-            "paymentDate": "11th of each month"
+            "paymentDate": "2024-06-21T22:00:00.000Z"
         },
         "customFields": [
             {
@@ -221,7 +221,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "Credit Card",
-            "paymentDate": "17th of each month"
+            "paymentDate": "2024-02-28T22:00:00.000Z"
         },
         "customFields": [
             {
@@ -338,7 +338,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "Credit Card",
-            "paymentDate": "8th of each month"
+            "paymentDate": "2024-09-29T22:00:00.000Z"
         },
         "customFields": [
             {
@@ -375,7 +375,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "Credit Card",
-            "paymentDate": "17th of each month"
+            "paymentDate": "2024-04-20T22:00:00.000Z"
         },
         "customFields": [
             {
@@ -412,7 +412,7 @@
         },
         "paymentTerms": {
             "paymentMethod": "Credit Card",
-            "paymentDate": "4th of each month"
+            "paymentDate": "2024-07-04T22:00:00.000Z"
         },
         "customFields": [
             {

@@ -1,3 +1,3 @@
-import LinkCell from './LinkCell.component.tsx';
+import LinkCell from './LinkCell.component';
 
 export default LinkCell;

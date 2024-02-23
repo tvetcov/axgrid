@@ -1,5 +1,7 @@
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { ThemeProvider } from '@mui/material';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 
 import { routeTree } from 'routeTree.gen';
 import theme from 'styles/theme';
@@ -16,7 +18,9 @@ declare module '@tanstack/react-router' {
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <RouterProvider router={router} />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <RouterProvider router={router} />
+            </LocalizationProvider>
         </ThemeProvider>
     );
 }

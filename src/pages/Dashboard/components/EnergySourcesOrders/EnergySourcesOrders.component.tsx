@@ -6,10 +6,12 @@ import Widget from 'components/Widget';
 import DataTable from 'components/DataTable';
 
 import { EnergySource } from 'services/api.types';
+import Modal from 'components/Modal';
+import EnergySourceForm from './components/EnergySourceForm';
 import ActionButton from './components/ActionButton';
 import EnergyIcon from './components/EnergyIcon';
-import useEnergySourceSelector from './useEnergySourcesOrders.hook.ts';
-import energySourcesOrdersStyles from './energySourcesOrders.styles.ts';
+import useEnergySourceSelector from './useEnergySourcesOrders.hook';
+import energySourcesOrdersStyles from './energySourcesOrders.styles';
 
 const EnergySourcesOrders = () => {
     const {
@@ -17,14 +19,19 @@ const EnergySourcesOrders = () => {
         handleEnergyTypeChange,
         availableEnergySourceNames,
         filteredEnergySources,
-        tableColumns
+        tableColumns,
+        isModalOpen,
+        openModal,
+        closeModal
     } = useEnergySourceSelector();
 
     return (
         <Widget
             title="Energy Sources"
             subtitle="Displays the currently selected energy source"
-            actionButton={<ActionButton energyType={energyType} />}
+            actionButton={
+                <ActionButton onClick={openModal} energyType={energyType} />
+            }
         >
             <Box sx={{ mt: 2 }}>
                 <ToggleButtonGroup
@@ -51,6 +58,14 @@ const EnergySourcesOrders = () => {
                     rowIdKey="id"
                 />
             </Box>
+            <Modal
+                title={`New ${energyType} Deal`}
+                maxWidth="md"
+                isOpen={isModalOpen}
+                onClose={closeModal}
+            >
+                <EnergySourceForm energyType={energyType} />
+            </Modal>
         </Widget>
     );
 };

@@ -15,12 +15,15 @@
         "@emotion/styled": "^11.11.0",
         "@mui/icons-material": "^5.15.10",
         "@mui/material": "^5.15.10",
+        "@mui/x-date-pickers": "^6.19.5",
         "@tanstack/react-router": "^1.16.5",
-        "@tanstack/router-devtools": "^1.16.5",
+        "date-fns": "^3.3.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.50.1"
     },
     "devDependencies": {
+        "@tanstack/router-devtools": "^1.16.5",
         "@tanstack/router-vite-plugin": "^1.16.5",
         "@total-typescript/ts-reset": "^0.5.1",
         "@types/react": "^18.2.55",

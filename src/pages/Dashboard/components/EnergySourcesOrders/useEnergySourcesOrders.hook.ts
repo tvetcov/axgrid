@@ -1,11 +1,11 @@
-import { MouseEvent, useMemo } from 'react';
+import { MouseEvent, useMemo, useState } from 'react';
 
 import { useDashboardContext } from 'pages/Dashboard/context/useDashboardContext';
 import { ENERGY_SOURCE_ID } from 'services/api.types';
 import {
     getTableColumns,
     getUniqueSourceNames
-} from './energySourcesOrders.utils.tsx';
+} from './energySourcesOrders.utils';
 
 const useEnergySourcesOrders = () => {
     const {
@@ -15,6 +15,8 @@ const useEnergySourcesOrders = () => {
         filteredEnergySources,
         fieldDefinitions
     } = useDashboardContext();
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleEnergyTypeChange = (
         _: MouseEvent<HTMLElement>,
@@ -41,6 +43,9 @@ const useEnergySourcesOrders = () => {
         handleEnergyTypeChange,
         filteredEnergySources,
         tableColumns,
+        isModalOpen,
+        openModal: () => setIsModalOpen(true),
+        closeModal: () => setIsModalOpen(false),
         availableEnergySourceNames: getUniqueSourceNames(availableEnergySources)
     };
 };

@@ -2,7 +2,6 @@ import { MouseEvent } from 'react';
 
 import Link from '@mui/material/Link';
 import Tooltip from '@mui/material/Tooltip';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 import linkStyles from './linkCell.styles';
 
@@ -22,7 +21,6 @@ const LinkCell = ({ href, label }: { href: string; label: string }) => {
                 sx={linkStyles}
             >
                 {label}
-                <OpenInNewIcon />
             </Link>
         </Tooltip>
     );

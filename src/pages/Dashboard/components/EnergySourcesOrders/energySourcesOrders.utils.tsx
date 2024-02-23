@@ -1,12 +1,14 @@
+import { format } from 'date-fns';
+
 import {
     ENERGY_SOURCE_ID,
     EnergySource,
     FieldDefinitions
 } from 'services/api.types';
 import { HeadCell } from 'components/DataTable/dataTable.types';
-
 import ListCell from 'components/Cells/ListCell.component';
 import FieldSwitchCell from 'components/FieldSwitchCell';
+import { DATE_FORMAT } from 'utils/constants';
 
 export const getUniqueSourceNames = (sources: EnergySource[]) => {
     return [...new Set(sources.map(energySource => energySource.source))];
@@ -67,7 +69,7 @@ export const DEFAULT_COLUMNS: HeadCell<EnergySource>[] = [
                     },
                     {
                         label: 'Payment date',
-                        value: row.paymentTerms.paymentDate
+                        value: format(row.paymentTerms.paymentDate, DATE_FORMAT)
                     }
                 ]}
             />

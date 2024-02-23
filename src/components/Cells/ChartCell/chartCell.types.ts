@@ -1,4 +1,4 @@
-import { ChartFieldValue, FieldDefinitionItem } from 'services/api.types.ts';
+import { ChartFieldValue, FieldDefinitionItem } from 'services/api.types';
 
 export interface ChartCellProps {
     value: ChartFieldValue;

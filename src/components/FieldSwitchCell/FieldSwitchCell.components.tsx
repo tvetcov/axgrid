@@ -1,5 +1,5 @@
 import LinkCell from 'components/Cells/LinkCell';
-import DateTimeCell from 'components/Cells/DateTimeCell.component.tsx';
+import DateTimeCell from 'components/Cells/DateTimeCell.component';
 import ChartCell from 'components/Cells/ChartCell';
 
 import {
