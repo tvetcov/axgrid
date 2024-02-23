@@ -11,7 +11,14 @@ import CloseIcon from '@mui/icons-material/Close';
 import modalStyles from './modal.styles';
 import { ModalProps } from './modal.types';
 
-const Modal = ({ children, isOpen, onClose, title, maxWidth, sx = {} }: ModalProps) => {
+const Modal = ({
+    children,
+    isOpen,
+    onClose,
+    title,
+    maxWidth,
+    sx = {}
+}: ModalProps) => {
     const handleClick = (e: MouseEvent) => {
         e.stopPropagation();
         onClose();

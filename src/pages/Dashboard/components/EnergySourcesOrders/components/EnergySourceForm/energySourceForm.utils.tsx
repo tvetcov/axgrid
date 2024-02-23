@@ -1,7 +1,11 @@
 import InputAdornment from '@mui/material/InputAdornment';
 
 import { INPUT_FIELD_TYPES } from 'components/Fields/field.types';
-import { FIELD_SUBTYPES, FIELD_TYPES, FieldDefinitionItem } from 'services/api.types.ts';
+import {
+    FIELD_SUBTYPES,
+    FIELD_TYPES,
+    FieldDefinitionItem
+} from 'services/api.types.ts';
 import { FormFieldRecord } from './energySourceForm.types.ts';
 
 export const defaultFormValues = {
@@ -18,10 +22,9 @@ export const defaultFormValues = {
     }
 };
 
-export const getDefaultEnergyFormFields = (customFields: FormFieldRecord[]): Record<
-    string,
-    FormFieldRecord[]
-> => {
+export const getDefaultEnergyFormFields = (
+    customFields: FormFieldRecord[]
+): Record<string, FormFieldRecord[]> => {
     return {
         'Price info:': [
             {
@@ -76,33 +79,34 @@ export const getDefaultEnergyFormFields = (customFields: FormFieldRecord[]): Rec
 export const getCustomEnergyFormFields = (
     sourceDefinitions: FieldDefinitionItem[]
 ): FormFieldRecord[] => {
-    const fields = sourceDefinitions.map((fieldDefinition: FieldDefinitionItem) => {
-        switch (fieldDefinition.type) {
-            case FIELD_TYPES.TextFieldData : {
-                if(fieldDefinition.subType === FIELD_SUBTYPES.dateTime){
+    const fields = sourceDefinitions.map(
+        (fieldDefinition: FieldDefinitionItem) => {
+            switch (fieldDefinition.type) {
+                case FIELD_TYPES.TextFieldData: {
+                    if (fieldDefinition.subType === FIELD_SUBTYPES.dateTime) {
+                        return {
+                            name: String(fieldDefinition.id),
+                            label: fieldDefinition.name,
+                            type: INPUT_FIELD_TYPES.DATE
+                        };
+                    }
+
                     return {
                         name: String(fieldDefinition.id),
                         label: fieldDefinition.name,
-                        type: INPUT_FIELD_TYPES.DATE
+                        type: INPUT_FIELD_TYPES.TEXT
                     };
                 }
-
-                return {
-                    name: String(fieldDefinition.id),
-                    label: fieldDefinition.name,
-                    type: INPUT_FIELD_TYPES.TEXT
-                };
-
-            }
-            default :{
-                return {
-                    name: String(fieldDefinition.id),
-                    label: fieldDefinition.name,
-                    type: INPUT_FIELD_TYPES.TEXT
-                };
+                default: {
+                    return {
+                        name: String(fieldDefinition.id),
+                        label: fieldDefinition.name,
+                        type: INPUT_FIELD_TYPES.TEXT
+                    };
+                }
             }
         }
-    });
+    );
 
     console.log(fields);
     return fields;
