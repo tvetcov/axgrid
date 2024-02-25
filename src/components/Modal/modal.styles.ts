@@ -1,5 +1,6 @@
 export default {
     content: {
-        minWidth: 300
+        minWidth: 300,
+        maxHeight: '75vh'
     }
 };

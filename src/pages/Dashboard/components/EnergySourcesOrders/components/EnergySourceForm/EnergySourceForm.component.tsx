@@ -3,10 +3,10 @@ import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import TextInput from 'components/Fields/TextField.component';
 import { ENERGY_SOURCE_ID } from 'services/api.types';
+import ItemFormSwitch from 'components/FieldSwitch/ItemFormSwitch';
 import energySourceFormStyles from './energySourceForm.styles';
-import useEnergySourceForm from './useEnergySourceForm.hook.ts';
+import useEnergySourceForm from './useEnergySourceForm.hook';
 
 const EnergySourceForm = ({ energyType }: { energyType: ENERGY_SOURCE_ID }) => {
     const { formFields, control, onSubmit, handleSubmit } =
@@ -23,9 +23,9 @@ const EnergySourceForm = ({ energyType }: { energyType: ENERGY_SOURCE_ID }) => {
                         {fields.map(field => (
                             <FormControl
                                 key={String(field.name)}
-                                sx={energySourceFormStyles.formControl}
+                                sx={energySourceFormStyles(field.type)}
                             >
-                                <TextInput
+                                <ItemFormSwitch
                                     control={control}
                                     name={field.name}
                                     label={field.label}

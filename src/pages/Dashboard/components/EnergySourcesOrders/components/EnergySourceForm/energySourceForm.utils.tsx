@@ -5,8 +5,8 @@ import {
     FIELD_SUBTYPES,
     FIELD_TYPES,
     FieldDefinitionItem
-} from 'services/api.types.ts';
-import { FormFieldRecord } from './energySourceForm.types.ts';
+} from 'services/api.types';
+import { FormFieldRecord } from './energySourceForm.types';
 
 export const defaultFormValues = {
     price: '',
@@ -97,6 +97,13 @@ export const getCustomEnergyFormFields = (
                         type: INPUT_FIELD_TYPES.TEXT
                     };
                 }
+                case FIELD_TYPES.ChartFieldData: {
+                    return {
+                        name: String(fieldDefinition.id),
+                        label: fieldDefinition.name,
+                        type: INPUT_FIELD_TYPES.ARRAY
+                    };
+                }
                 default: {
                     return {
                         name: String(fieldDefinition.id),
@@ -108,6 +115,5 @@ export const getCustomEnergyFormFields = (
         }
     );
 
-    console.log(fields);
     return fields;
 };

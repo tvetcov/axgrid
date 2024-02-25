@@ -1,13 +1,8 @@
-import { Control, Controller, FieldValues, Path } from 'react-hook-form';
+import { Controller, FieldValues, Path } from 'react-hook-form';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 import { DATE_FORMAT } from 'utils/constants';
-
-interface DateFieldProps<T extends FieldValues> {
-    control: Control<T, object>;
-    name: Path<T>;
-    label: string;
-}
+import { DateFieldProps } from './field.types';
 
 const DateField = <T extends FieldValues>({
     control,
@@ -19,7 +14,7 @@ const DateField = <T extends FieldValues>({
     return (
         <Controller
             control={control}
-            name={name}
+            name={name as Path<T>}
             render={({ field }) => (
                 <DatePicker
                     format={DATE_FORMAT}

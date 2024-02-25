@@ -10,8 +10,10 @@ const ChartCell = (props: ChartCellProps) => {
     const { value, fieldDefinition } = props;
     const [isOpen, setIsOpen] = useState(false);
 
+    console.log(value);
+
     return (
-        <>
+        <div onClick={e => e.stopPropagation()}>
             <Button
                 variant="contained"
                 endIcon={<StackedLineChartIcon />}
@@ -26,7 +28,7 @@ const ChartCell = (props: ChartCellProps) => {
             >
                 <div>Chart goes here</div>
             </Modal>
-        </>
+        </div>
     );
 };
 

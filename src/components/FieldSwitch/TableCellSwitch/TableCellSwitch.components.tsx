@@ -1,6 +1,10 @@
-import LinkCell from 'components/Cells/LinkCell';
-import DateTimeCell from 'components/Cells/DateTimeCell.component';
-import ChartCell from 'components/Cells/ChartCell';
+import { lazy } from 'react';
+
+const LinkCell = lazy(() => import('components/Cells/LinkCell'));
+const DateTimeCell = lazy(
+    () => import('components/Cells/DateTimeCell.component')
+);
+const ChartCell = lazy(() => import('components/Cells/ChartCell'));
 
 import {
     CustomFieldValue,

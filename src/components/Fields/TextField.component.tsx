@@ -1,20 +1,14 @@
-import { Control, Controller, FieldValues, Path } from 'react-hook-form';
+import { Controller, FieldValues, Path } from 'react-hook-form';
 
-import { OutlinedInputProps, TextField as MuiTextField } from '@mui/material';
+import { TextField as MuiTextField } from '@mui/material';
 
-type TextFieldProps<T extends FieldValues> = {
-    control: Control<T, object>;
-    label: string;
-    name: string;
-    type: string;
-    InputProps?: Partial<OutlinedInputProps>;
-};
+import { TextFieldProps, INPUT_FIELD_TYPES } from './field.types';
 
 const TextField = <T extends FieldValues>({
     control,
     label,
     name,
-    type = 'text',
+    type = INPUT_FIELD_TYPES.TEXT,
     InputProps
 }: TextFieldProps<T>) => {
     return (

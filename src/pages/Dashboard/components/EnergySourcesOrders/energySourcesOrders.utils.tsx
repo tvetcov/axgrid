@@ -7,7 +7,7 @@ import {
 } from 'services/api.types';
 import { HeadCell } from 'components/DataTable/dataTable.types';
 import ListCell from 'components/Cells/ListCell.component';
-import FieldSwitchCell from 'components/FieldSwitchCell';
+import TableCellFieldSwitch from 'components/FieldSwitch/TableCellSwitch';
 import { DATE_FORMAT } from 'utils/constants';
 
 export const getUniqueSourceNames = (sources: EnergySource[]) => {
@@ -96,7 +96,7 @@ export const getTableColumns = ({
             );
 
             return customField?.value ? (
-                <FieldSwitchCell
+                <TableCellFieldSwitch
                     value={customField?.value}
                     fieldDefinition={fieldDefinition}
                 />

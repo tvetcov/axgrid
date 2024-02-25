@@ -1,13 +1,13 @@
 import { useForm } from 'react-hook-form';
 
-import { ENERGY_SOURCE_ID } from 'services/api.types.ts';
-import { useDashboardContext } from 'pages/Dashboard/context/useDashboardContext.ts';
+import { ENERGY_SOURCE_ID } from 'services/api.types';
+import { useDashboardContext } from 'pages/Dashboard/context/useDashboardContext';
 import {
     defaultFormValues,
     getCustomEnergyFormFields,
     getDefaultEnergyFormFields
-} from './energySourceForm.utils.tsx';
-import { EnergySourceFormValues } from './energySourceForm.types.ts';
+} from './energySourceForm.utils';
+import { EnergySourceFormValues } from './energySourceForm.types';
 
 const useEnergySourceForm = (energyType: ENERGY_SOURCE_ID) => {
     const { handleSubmit, control } = useForm<EnergySourceFormValues>({

@@ -1,7 +1,7 @@
 import { OutlinedInputProps } from '@mui/material/OutlinedInput';
 
-import { INPUT_FIELD_TYPES } from 'components/Fields/field.types.ts';
-import { defaultFormValues } from './energySourceForm.utils.tsx';
+import { INPUT_FIELD_TYPES } from 'components/Fields/field.types';
+import { defaultFormValues } from './energySourceForm.utils';
 
 export type EnergySourceFormValues = typeof defaultFormValues;
 

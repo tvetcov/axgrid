@@ -234,58 +234,56 @@
             },
             {
                 "id": 3,
-                "value": {
-                    "chartData": [
-                        {
-                            "label": "January",
-                            "value": 4.5
-                        },
-                        {
-                            "label": "February",
-                            "value": 5.2
-                        },
-                        {
-                            "label": "March",
-                            "value": 6.1
-                        },
-                        {
-                            "label": "April",
-                            "value": 7.3
-                        },
-                        {
-                            "label": "May",
-                            "value": 8.2
-                        },
-                        {
-                            "label": "June",
-                            "value": 9.1
-                        },
-                        {
-                            "label": "July",
-                            "value": 9.5
-                        },
-                        {
-                            "label": "August",
-                            "value": 8.9
-                        },
-                        {
-                            "label": "September",
-                            "value": 7.8
-                        },
-                        {
-                            "label": "October",
-                            "value": 6.5
-                        },
-                        {
-                            "label": "November",
-                            "value": 5.1
-                        },
-                        {
-                            "label": "December",
-                            "value": 4.3
-                        }
-                    ]
-                }
+                "value": [
+                    {
+                        "label": "January",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "February",
+                        "value": 5.2
+                    },
+                    {
+                        "label": "March",
+                        "value": 6.1
+                    },
+                    {
+                        "label": "April",
+                        "value": 7.3
+                    },
+                    {
+                        "label": "May",
+                        "value": 8.2
+                    },
+                    {
+                        "label": "June",
+                        "value": 9.1
+                    },
+                    {
+                        "label": "July",
+                        "value": 9.5
+                    },
+                    {
+                        "label": "August",
+                        "value": 8.9
+                    },
+                    {
+                        "label": "September",
+                        "value": 7.8
+                    },
+                    {
+                        "label": "October",
+                        "value": 6.5
+                    },
+                    {
+                        "label": "November",
+                        "value": 5.1
+                    },
+                    {
+                        "label": "December",
+                        "value": 4.3
+                    }
+                ]
             },
             {
                 "id": 4,
