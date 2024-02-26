@@ -8,7 +8,7 @@ import {
 } from 'services/api.types';
 import { FormFieldRecord } from './energySourceForm.types';
 
-export const defaultFormValues = {
+export const DEFAULT_FORM_VALUES = {
     price: '',
     minimumPurchaseQuantity: '',
     contractTerms: {
@@ -20,6 +20,33 @@ export const defaultFormValues = {
         paymentMethod: '',
         paymentDate: ''
     }
+};
+
+export const getDefaultFormValues = (customFields: FormFieldRecord[]) => {
+    const customFieldsDefaultValues = customFields.map(field => {
+        switch (field.type) {
+            case INPUT_FIELD_TYPES.DATE:
+                return {
+                    [field.name]: new Date()
+                };
+            case INPUT_FIELD_TYPES.ARRAY:
+                return {
+                    [field.name]: [{ label: '', value: '' }]
+                };
+            default:
+                return {
+                    [field.name]: ''
+                };
+        }
+    });
+
+    return customFieldsDefaultValues.reduce(
+        (acc, field) => ({
+            ...acc,
+            ...field
+        }),
+        DEFAULT_FORM_VALUES
+    );
 };
 
 export const getDefaultEnergyFormFields = (
@@ -117,3 +144,15 @@ export const getCustomEnergyFormFields = (
 
     return fields;
 };
+//
+// export const getDefaultValuesForCustomFields = (customFields) => {
+//     const customFields = getCustomEnergyFormFields(sourceDefinitions);
+//
+//     return customFields.reduce(
+//         (acc, field) => ({
+//             ...acc,
+//             [field.name]: ''
+//         }),
+//         {}
+//     );
+// }
