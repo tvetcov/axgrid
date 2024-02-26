@@ -2,6 +2,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 import { INPUT_FIELD_TYPES } from 'components/Fields/field.types';
 import {
+    CustomFieldValue,
     FIELD_SUBTYPES,
     FIELD_TYPES,
     FieldDefinitionItem
@@ -18,16 +19,18 @@ export const DEFAULT_FORM_VALUES = {
     },
     paymentTerms: {
         paymentMethod: '',
-        paymentDate: ''
+        paymentDate: new Date().toISOString()
     }
 };
 
-export const getDefaultFormValues = (customFields: FormFieldRecord[]) => {
+export const getDefaultFormValues = (
+    customFields: FormFieldRecord[]
+): typeof DEFAULT_FORM_VALUES | Record<string, CustomFieldValue> => {
     const customFieldsDefaultValues = customFields.map(field => {
         switch (field.type) {
             case INPUT_FIELD_TYPES.DATE:
                 return {
-                    [field.name]: new Date()
+                    [field.name]: new Date().toISOString()
                 };
             case INPUT_FIELD_TYPES.ARRAY:
                 return {
@@ -144,15 +147,3 @@ export const getCustomEnergyFormFields = (
 
     return fields;
 };
-//
-// export const getDefaultValuesForCustomFields = (customFields) => {
-//     const customFields = getCustomEnergyFormFields(sourceDefinitions);
-//
-//     return customFields.reduce(
-//         (acc, field) => ({
-//             ...acc,
-//             [field.name]: ''
-//         }),
-//         {}
-//     );
-// }

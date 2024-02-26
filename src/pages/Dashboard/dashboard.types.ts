@@ -14,4 +14,5 @@ export interface IDashboardContext {
     setAvailableEnergySources: Dispatch<SetStateAction<EnergySource[]>>;
     filteredEnergySources: EnergySource[];
     setFilteredEnergySources: Dispatch<SetStateAction<EnergySource[]>>;
+    addEnergySource: (energySource: EnergySource) => void;
 }

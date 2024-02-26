@@ -17,6 +17,7 @@ const Modal = ({
     onClose,
     title,
     maxWidth,
+    hideActions = false,
     sx = {}
 }: ModalProps) => {
     const handleClick = (e: MouseEvent) => {
@@ -52,11 +53,13 @@ const Modal = ({
                 <DialogContent sx={{ ...modalStyles.content, ...sx }}>
                     {children}
                 </DialogContent>
-                <DialogActions>
-                    <Button autoFocus variant="contained" onClick={onClose}>
-                        Close
-                    </Button>
-                </DialogActions>
+                {!hideActions && (
+                    <DialogActions>
+                        <Button autoFocus variant="contained" onClick={onClose}>
+                            Close
+                        </Button>
+                    </DialogActions>
+                )}
             </div>
         </Dialog>
     );

@@ -8,9 +8,17 @@ import ItemFormSwitch from 'components/FieldSwitch/ItemFormSwitch';
 import energySourceFormStyles from './energySourceForm.styles';
 import useEnergySourceForm from './useEnergySourceForm.hook';
 
-const EnergySourceForm = ({ energyType }: { energyType: ENERGY_SOURCE_ID }) => {
-    const { formFields, control, onSubmit, handleSubmit } =
-        useEnergySourceForm(energyType);
+const EnergySourceForm = ({
+    energyType,
+    closeModal
+}: {
+    energyType: ENERGY_SOURCE_ID;
+    closeModal: () => void;
+}) => {
+    const { formFields, control, handleSubmit } = useEnergySourceForm({
+        energyType,
+        closeModal
+    });
 
     return (
         <form>
@@ -38,10 +46,7 @@ const EnergySourceForm = ({ energyType }: { energyType: ENERGY_SOURCE_ID }) => {
                 ))}
             </Box>
             <Box>
-                <Button
-                    variant="contained"
-                    onClick={() => void handleSubmit(onSubmit)()}
-                >
+                <Button variant="contained" onClick={handleSubmit}>
                     Submit
                 </Button>
             </Box>

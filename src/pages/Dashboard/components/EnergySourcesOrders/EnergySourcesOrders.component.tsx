@@ -63,8 +63,12 @@ const EnergySourcesOrders = () => {
                 maxWidth="md"
                 isOpen={isModalOpen}
                 onClose={closeModal}
+                hideActions
             >
-                <EnergySourceForm energyType={energyType} />
+                <EnergySourceForm
+                    energyType={energyType}
+                    closeModal={closeModal}
+                />
             </Modal>
         </Widget>
     );

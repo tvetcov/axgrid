@@ -15,7 +15,8 @@ const DashboardContextProvider = ({
     availableEnergySources,
     setAvailableEnergySources,
     filteredEnergySources,
-    setFilteredEnergySources
+    setFilteredEnergySources,
+    addEnergySource
 }: DashboardContextProps) => {
     const contextValue = useMemo(() => {
         return {
@@ -25,7 +26,8 @@ const DashboardContextProvider = ({
             availableEnergySources,
             setAvailableEnergySources,
             filteredEnergySources,
-            setFilteredEnergySources
+            setFilteredEnergySources,
+            addEnergySource
         };
     }, [
         fieldDefinitions,
@@ -34,7 +36,8 @@ const DashboardContextProvider = ({
         availableEnergySources,
         setAvailableEnergySources,
         filteredEnergySources,
-        setFilteredEnergySources
+        setFilteredEnergySources,
+        addEnergySource
     ]);
 
     return (

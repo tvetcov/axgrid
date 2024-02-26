@@ -20,6 +20,10 @@ const useDashboard = () => {
     const [fieldDefinitions, setFieldDefinitions] =
         useState<FieldDefinitions | null>(null);
 
+    const addEnergySource = (energySource: EnergySource) => {
+        setAvailableEnergySources([...availableEnergySources, energySource]);
+    };
+
     useEffect(() => {
         const filteredSources = availableEnergySources.filter(
             source => source.source === energyType
@@ -50,7 +54,8 @@ const useDashboard = () => {
         setEnergyType,
         setAvailableEnergySources,
         filteredEnergySources,
-        setFilteredEnergySources
+        setFilteredEnergySources,
+        addEnergySource
     };
 };
 
