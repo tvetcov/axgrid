@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form';
 import {
     CustomFieldValue,
     ENERGY_SOURCE_ID,
-    EnergySource
+    EnergySource,
+    ORDER_STATUS
 } from 'services/api.types';
 import { useDashboardContext } from 'pages/Dashboard/context/useDashboardContext';
 import { formatCurrency } from 'utils/utils';
@@ -32,6 +33,7 @@ const useEnergySourceForm = ({
     const onSubmit = (data: typeof defaultValues) => {
         const modifiedData: EnergySource = {
             id: Math.random() * 1000,
+            status: ORDER_STATUS.Open,
             price: formatCurrency(Number(data.price)),
             minimumPurchaseQuantity: Number(data.minimumPurchaseQuantity),
             source: energyType,

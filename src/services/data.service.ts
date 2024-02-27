@@ -10,7 +10,7 @@ class DataService {
 
         try {
             const response = await fetch(url);
-            return await response.json() as T;
+            return (await response.json()) as T;
         } catch (error) {
             console.error('Error fetching data:', error);
         }

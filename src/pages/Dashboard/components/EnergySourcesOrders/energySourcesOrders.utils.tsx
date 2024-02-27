@@ -3,10 +3,12 @@ import { format } from 'date-fns';
 import {
     ENERGY_SOURCE_ID,
     EnergySource,
-    FieldDefinitions
+    FieldDefinitions,
+    ORDER_STATUS
 } from 'services/api.types';
 import { HeadCell } from 'components/DataTable/dataTable.types';
 import ListCell from 'components/Cells/ListCell.component';
+import StatusCell from 'components/Cells/StatusCell';
 import TableCellFieldSwitch from 'components/FieldSwitch/TableCellSwitch';
 import { DATE_FORMAT } from 'utils/constants';
 
@@ -19,7 +21,7 @@ export const DEFAULT_COLUMNS: HeadCell<EnergySource>[] = [
         id: 'status',
         label: 'Order Status',
         width: 120,
-        cellRenderer: row => row.status
+        cellRenderer: row => <StatusCell status={row.status} />
     },
     {
         id: 'source',
@@ -111,4 +113,15 @@ export const getTableColumns = ({
     }));
 
     return [...DEFAULT_COLUMNS, ...columns];
+};
+
+export const getNextStatus = (status: ORDER_STATUS) => {
+    switch (status) {
+        case ORDER_STATUS.Open:
+            return ORDER_STATUS.Pending;
+        case ORDER_STATUS.Pending:
+            return ORDER_STATUS.Accepted;
+        default:
+            return ORDER_STATUS.Open;
+    }
 };

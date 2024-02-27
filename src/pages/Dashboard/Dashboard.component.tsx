@@ -12,7 +12,8 @@ const Dashboard = () => {
         setAvailableEnergySources,
         filteredEnergySources,
         setFilteredEnergySources,
-        addEnergySource
+        addEnergySource,
+        editEnergySource
     } = useDashboard();
 
     return (
@@ -25,6 +26,7 @@ const Dashboard = () => {
             filteredEnergySources={filteredEnergySources}
             setFilteredEnergySources={setFilteredEnergySources}
             addEnergySource={addEnergySource}
+            editEnergySource={editEnergySource}
         >
             <EnergySourcesOrders />
         </DashboardContextProvider>

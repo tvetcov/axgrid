@@ -5,7 +5,7 @@ import {
     EnergySource,
     FieldDefinitions
 } from 'services/api.types';
-import DataService  from 'services/data.service.ts';
+import DataService from 'services/data.service.ts';
 import { timeout } from 'utils/utils';
 
 const useDashboard = () => {
@@ -25,6 +25,29 @@ const useDashboard = () => {
         setAvailableEnergySources([...availableEnergySources, energySource]);
     };
 
+    const editEnergySource = ({
+        energySourceId,
+        propToEdit,
+        propValue
+    }: {
+        energySourceId: EnergySource['id'];
+        propToEdit: keyof EnergySource;
+        propValue: EnergySource[keyof EnergySource];
+    }) => {
+        const updatedEnergySources = filteredEnergySources.map(energySource => {
+            if (energySource.id === energySourceId) {
+                return {
+                    ...energySource,
+                    [propToEdit]: propValue
+                };
+            }
+
+            return energySource;
+        });
+
+        setFilteredEnergySources(updatedEnergySources);
+    };
+
     useEffect(() => {
         const filteredSources = availableEnergySources.filter(
             source => source.source === energyType
@@ -40,7 +63,7 @@ const useDashboard = () => {
         ]).then(async ([energySources, fields]) => {
             await timeout(250);
 
-            if(energySources && fields) {
+            if (energySources && fields) {
                 setAvailableEnergySources(energySources);
                 setFieldDefinitions(fields);
             }
@@ -55,7 +78,8 @@ const useDashboard = () => {
         setAvailableEnergySources,
         filteredEnergySources,
         setFilteredEnergySources,
-        addEnergySource
+        addEnergySource,
+        editEnergySource
     };
 };
 

@@ -10,7 +10,7 @@ import Modal from 'components/Modal';
 import EnergySourceForm from './components/EnergySourceForm';
 import ActionButton from './components/ActionButton';
 import EnergyIcon from './components/EnergyIcon';
-import useEnergySourceSelector from './useEnergySourcesOrders.hook';
+import useEnergySourceSelector from './useEnergySourcesOrders.hook.tsx';
 import energySourcesOrdersStyles from './energySourcesOrders.styles';
 
 const EnergySourcesOrders = () => {
@@ -22,7 +22,8 @@ const EnergySourcesOrders = () => {
         tableColumns,
         isModalOpen,
         openModal,
-        closeModal
+        closeModal,
+        rowActions
     } = useEnergySourceSelector();
 
     return (
@@ -55,6 +56,7 @@ const EnergySourcesOrders = () => {
                 <DataTable<EnergySource>
                     rows={filteredEnergySources}
                     columns={tableColumns}
+                    rowActions={rowActions}
                     rowIdKey="id"
                 />
             </Box>

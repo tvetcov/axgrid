@@ -40,7 +40,7 @@ export type ChartFieldValue = { label: string; value: string | string[] }[];
 
 export enum ORDER_STATUS {
     Open = 'Open',
-    Rejected  = 'Rejected',
+    Rejected = 'Rejected',
     Accepted = 'Accepted',
     Pending = 'Pending'
 }

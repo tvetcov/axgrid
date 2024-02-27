@@ -18,7 +18,8 @@ export const DashboardContext = createContext<IDashboardContext>({
     setEnergyType: () => {},
     availableEnergySources: [],
     setAvailableEnergySources: () => {},
-    addEnergySource: () => {}
+    addEnergySource: () => {},
+    editEnergySource: () => {}
 });
 
 export default DashboardContext;

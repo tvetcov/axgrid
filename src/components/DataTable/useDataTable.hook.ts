@@ -12,7 +12,6 @@ const useDataTable = <T, K extends keyof T>({
 }) => {
     const [order, setOrder] = useState<Order>('asc');
     const [orderBy, setOrderBy] = useState<string>(rowIdKey as string);
-    const [selected, setSelected] = useState<T[K][]>([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -20,34 +19,6 @@ const useDataTable = <T, K extends keyof T>({
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
         setOrderBy(property);
-    };
-
-    const handleSelectAllClick = (event: ChangeEvent<HTMLInputElement>) => {
-        if (event.target.checked) {
-            const newSelected = rows.map(row => row[rowIdKey]);
-            setSelected(newSelected);
-            return;
-        }
-        setSelected([]);
-    };
-
-    const handleClick = (id: T[K]) => {
-        const selectedIndex = selected.indexOf(id);
-        let newSelected: T[K][] = [];
-
-        if (selectedIndex === -1) {
-            newSelected = newSelected.concat(selected, id);
-        } else if (selectedIndex === 0) {
-            newSelected = newSelected.concat(selected.slice(1));
-        } else if (selectedIndex === selected.length - 1) {
-            newSelected = newSelected.concat(selected.slice(0, -1));
-        } else if (selectedIndex > 0) {
-            newSelected = newSelected.concat(
-                selected.slice(0, selectedIndex),
-                selected.slice(selectedIndex + 1)
-            );
-        }
-        setSelected(newSelected);
     };
 
     const handleChangePage = (_: unknown, newPage: number) => {
@@ -73,13 +44,10 @@ const useDataTable = <T, K extends keyof T>({
     );
 
     return {
-        selected,
         order,
         orderBy,
-        handleSelectAllClick,
         handleRequestSort,
         visibleRows,
-        handleClick,
         emptyRows,
         rowsPerPage,
         page,

@@ -1,8 +1,5 @@
 import { Order } from './dataTable.types';
 
-export const isSelected = <T>(id: T[keyof T], selected: T[keyof T][]) =>
-    selected.indexOf(id) !== -1;
-
 export function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
     const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
     stabilizedThis.sort((a, b) => {
