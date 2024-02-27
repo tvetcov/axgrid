@@ -6,7 +6,7 @@ import {
     EnergySource
 } from 'services/api.types';
 import { useDashboardContext } from 'pages/Dashboard/context/useDashboardContext';
-import { formatCurrency } from 'utils/utils.ts';
+import { formatCurrency } from 'utils/utils';
 import {
     getCustomEnergyFormFields,
     getDefaultEnergyFormFields,

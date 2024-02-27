@@ -16,7 +16,7 @@ import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import { ArrayDataFieldProps, INPUT_FIELD_TYPES } from './field.types.ts';
+import { ArrayDataFieldProps, INPUT_FIELD_TYPES } from './field.types';
 
 const rowWrapperStyles = {
     display: 'flex',

@@ -1,3 +1,3 @@
-import AreaChart from './Area.component.tsx';
+import AreaChart from './Area.component';
 
 export default AreaChart;

@@ -27,8 +27,8 @@ const EnergySourcesOrders = () => {
 
     return (
         <Widget
-            title="Energy Sources"
-            subtitle="Displays the currently selected energy source"
+            title="Energy Source Deals"
+            subtitle="Displays the list of currently selected energy source deals"
             actionButton={
                 <ActionButton onClick={openModal} energyType={energyType} />
             }

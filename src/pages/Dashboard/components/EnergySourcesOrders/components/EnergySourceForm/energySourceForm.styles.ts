@@ -1,4 +1,4 @@
-import { INPUT_FIELD_TYPES } from 'components/Fields/field.types.ts';
+import { INPUT_FIELD_TYPES } from 'components/Fields/field.types';
 
 export default function (type: INPUT_FIELD_TYPES) {
     return {

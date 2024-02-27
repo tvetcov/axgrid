@@ -7,7 +7,7 @@ import Modal from 'components/Modal';
 import LineChart from 'components/Charts/Line';
 import AreaChart from 'components/Charts/Area';
 
-import { FIELD_SUBTYPES } from 'services/api.types.ts';
+import { FIELD_SUBTYPES } from 'services/api.types';
 import { ChartCellProps } from './chartCell.types';
 
 const ChartCell = ({ value, fieldDefinition }: ChartCellProps) => {
