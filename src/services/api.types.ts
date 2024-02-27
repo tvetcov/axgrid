@@ -38,8 +38,16 @@ export type CustomFieldValue = string | ChartFieldValue;
 
 export type ChartFieldValue = { label: string; value: string | string[] }[];
 
+export enum ORDER_STATUS {
+    Open = 'Open',
+    Rejected  = 'Rejected',
+    Accepted = 'Accepted',
+    Pending = 'Pending'
+}
+
 export interface EnergySource {
     id: number;
+    status: ORDER_STATUS;
     source: ENERGY_SOURCE_ID;
     price: string;
     minimumPurchaseQuantity: number;

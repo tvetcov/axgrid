@@ -8,21 +8,21 @@ export interface DataTableProps<T> {
     rowIdKey: keyof T;
 }
 
-export interface HeadCell<T = unknown> {
+export interface HeadCell<T> {
     id: string;
     label: string;
     cellRenderer: (row: T) => ReactNode;
     width: number;
 }
 
-export interface DataTableHeaderProps {
+export interface DataTableHeaderProps<T> {
     numSelected: number;
     onRequestSort: (event: MouseEvent<unknown>, property: string) => void;
     onSelectAllClick: (event: ChangeEvent<HTMLInputElement>) => void;
     order: Order;
     orderBy: string;
     rowCount: number;
-    headCells: HeadCell[];
+    headCells: HeadCell<T>[];
 }
 
 export interface DataTableBodyProps<T> {
@@ -31,5 +31,5 @@ export interface DataTableBodyProps<T> {
     emptyRows: number;
     rowIdKey: keyof T;
     selected: T[keyof T][];
-    defaultColumns: HeadCell[];
+    defaultColumns: HeadCell<T>[];
 }

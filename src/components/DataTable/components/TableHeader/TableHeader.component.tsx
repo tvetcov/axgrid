@@ -10,7 +10,7 @@ import { visuallyHidden } from '@mui/utils';
 
 import { DataTableHeaderProps } from 'components/DataTable/dataTable.types';
 
-const TableHeader = ({
+const TableHeader = <T,>({
     onSelectAllClick,
     order,
     orderBy,
@@ -18,7 +18,7 @@ const TableHeader = ({
     rowCount,
     onRequestSort,
     headCells
-}: DataTableHeaderProps) => {
+}: DataTableHeaderProps<T>) => {
     const createSortHandler =
         (property: string) => (event: MouseEvent<unknown>) => {
             onRequestSort(event, property);

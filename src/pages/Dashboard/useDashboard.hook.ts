@@ -5,6 +5,7 @@ import {
     EnergySource,
     FieldDefinitions
 } from 'services/api.types';
+import DataService  from 'services/data.service.ts';
 import { timeout } from 'utils/utils';
 
 const useDashboard = () => {
@@ -34,16 +35,15 @@ const useDashboard = () => {
 
     useEffect(() => {
         void Promise.all([
-            fetch('./apiMocks/energySources.json'),
-            fetch('./apiMocks/fields.json')
+            DataService.fetch<EnergySource[]>('energySources'),
+            DataService.fetch<FieldDefinitions>('fields')
         ]).then(async ([energySources, fields]) => {
             await timeout(250);
 
-            const sourcesData = (await energySources.json()) as EnergySource[];
-            const fieldData = (await fields.json()) as FieldDefinitions;
-
-            setAvailableEnergySources(sourcesData);
-            setFieldDefinitions(fieldData);
+            if(energySources && fields) {
+                setAvailableEnergySources(energySources);
+                setFieldDefinitions(fields);
+            }
         });
     }, []);
 

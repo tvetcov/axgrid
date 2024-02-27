@@ -28,7 +28,7 @@ const useEnergySourcesOrders = () => {
     };
 
     const tableColumns = useMemo(() => {
-        const energySourceId = filteredEnergySources[0]?.source;
+        const energySourceId = filteredEnergySources[0]?.source; // anyway they have the same source as for current implementation
 
         return energySourceId
             ? getTableColumns({

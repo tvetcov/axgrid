@@ -37,7 +37,7 @@ const DataTable = <T,>({ rows, rowIdKey, columns }: DataTableProps<T>) => {
                     aria-labelledby="tableTitle"
                     size="small"
                 >
-                    <TableHeader
+                    <TableHeader<T>
                         numSelected={selected.length}
                         order={order}
                         orderBy={orderBy}

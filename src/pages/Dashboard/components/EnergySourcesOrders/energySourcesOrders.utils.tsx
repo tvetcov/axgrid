@@ -16,6 +16,12 @@ export const getUniqueSourceNames = (sources: EnergySource[]) => {
 
 export const DEFAULT_COLUMNS: HeadCell<EnergySource>[] = [
     {
+        id: 'status',
+        label: 'Order Status',
+        width: 120,
+        cellRenderer: row => row.status
+    },
+    {
         id: 'source',
         label: 'Source',
         width: 75,
