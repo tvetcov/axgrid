@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import Chip from '@mui/material/Chip';
 
-import { ORDER_STATUS } from 'services/api.types.ts';
-import statusCellStyles from './statusCell.styles.ts';
+import { ORDER_STATUS } from 'services/api.types';
+import statusCellStyles from './statusCell.styles';
 
 const StatusCell = ({ status }: { status: ORDER_STATUS }) => {
     const chipColor = useMemo(() => {

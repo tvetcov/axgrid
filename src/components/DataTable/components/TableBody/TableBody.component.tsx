@@ -24,7 +24,7 @@ const TableBody = <T,>({
                         sx={{ cursor: 'pointer' }}
                     >
                         <TableCell padding="checkbox">
-                            <IconMenu<T> rowActions={rowActions} row={row}/>
+                            <IconMenu<T> rowActions={rowActions} row={row} />
                         </TableCell>
                         {defaultColumns.map(column => {
                             return (

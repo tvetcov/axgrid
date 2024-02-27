@@ -5,7 +5,8 @@ import {
     EnergySource,
     FieldDefinitions
 } from 'services/api.types';
-import DataService from 'services/data.service.ts';
+import DataService from 'services/data.service';
+import SocketService from 'services/socket.service';
 import { timeout } from 'utils/utils';
 
 const useDashboard = () => {
@@ -34,19 +35,49 @@ const useDashboard = () => {
         propToEdit: keyof EnergySource;
         propValue: EnergySource[keyof EnergySource];
     }) => {
-        const updatedEnergySources = filteredEnergySources.map(energySource => {
-            if (energySource.id === energySourceId) {
-                return {
-                    ...energySource,
-                    [propToEdit]: propValue
-                };
+        const updatedEnergySources = availableEnergySources.map(
+            energySource => {
+                if (energySource.id === energySourceId) {
+                    return {
+                        ...energySource,
+                        [propToEdit]: propValue
+                    };
+                }
+
+                return energySource;
             }
+        );
 
-            return energySource;
-        });
+        SocketService.send(
+            JSON.stringify({
+                data: {
+                    id: energySourceId,
+                    [propToEdit]: propValue
+                }
+            })
+        );
 
-        setFilteredEnergySources(updatedEnergySources);
+        setAvailableEnergySources(updatedEnergySources);
     };
+
+    SocketService.onMessage((message: string) => {
+        const parsedMessage = JSON.parse(message) as { data: EnergySource };
+
+        const updatedEnergySources = availableEnergySources.map(
+            energySource => {
+                if (energySource.id === parsedMessage.data.id) {
+                    return {
+                        ...energySource,
+                        ...parsedMessage.data
+                    };
+                }
+
+                return energySource;
+            }
+        );
+
+        setAvailableEnergySources(updatedEnergySources);
+    });
 
     useEffect(() => {
         const filteredSources = availableEnergySources.filter(

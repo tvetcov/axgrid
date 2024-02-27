@@ -4,9 +4,9 @@ import Button from '@mui/material/Button';
 import UndoIcon from '@mui/icons-material/Undo';
 
 import ContentWrapper from 'components/ContentWrapper';
-import useNavigateTo from 'hooks/useNavigateTo.hook.ts';
-import { ROUTE_LIST } from 'pages/routes.ts';
-import pageNotFoundStyles from './pageNotFound.styles.ts';
+import useNavigateTo from 'hooks/useNavigateTo.hook';
+import { ROUTE_LIST } from 'pages/routes';
+import pageNotFoundStyles from './pageNotFound.styles';
 
 const PageNotFound = () => {
     const navigate = useNavigateTo();

@@ -10,7 +10,7 @@ import Modal from 'components/Modal';
 import EnergySourceForm from './components/EnergySourceForm';
 import ActionButton from './components/ActionButton';
 import EnergyIcon from './components/EnergyIcon';
-import useEnergySourceSelector from './useEnergySourcesOrders.hook.tsx';
+import useEnergySourceSelector from './useEnergySourcesOrders.hook';
 import energySourcesOrdersStyles from './energySourcesOrders.styles';
 
 const EnergySourcesOrders = () => {
