@@ -13,7 +13,7 @@ const Toolbar = ({ numSelected }: { numSelected: number }) => {
         <MUIToolbar sx={styles}>
             {numSelected > 0 ? (
                 <Typography
-                    sx={{ flex: '1 1 100%' }}
+                    sx={{ flex: 'Line Line 100%' }}
                     color="inherit"
                     variant="subtitle1"
                     component="div"
@@ -22,7 +22,7 @@ const Toolbar = ({ numSelected }: { numSelected: number }) => {
                 </Typography>
             ) : (
                 <Typography
-                    sx={{ flex: '1 1 100%' }}
+                    sx={{ flex: 'Line Line 100%' }}
                     variant="h6"
                     id="tableTitle"
                     component="div"

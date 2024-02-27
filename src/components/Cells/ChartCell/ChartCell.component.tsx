@@ -4,13 +4,15 @@ import Button from '@mui/material/Button';
 import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
 
 import Modal from 'components/Modal';
+import LineChart from 'components/Charts/Line';
+import AreaChart from 'components/Charts/Area';
+
+import { FIELD_SUBTYPES } from 'services/api.types.ts';
 import { ChartCellProps } from './chartCell.types';
 
-const ChartCell = (props: ChartCellProps) => {
-    const { value, fieldDefinition } = props;
+const ChartCell = ({ value, fieldDefinition }: ChartCellProps) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    console.log(value);
+    const { subType } = fieldDefinition;
 
     return (
         <div onClick={e => e.stopPropagation()}>
@@ -26,7 +28,15 @@ const ChartCell = (props: ChartCellProps) => {
                 onClose={() => setIsOpen(false)}
                 title={fieldDefinition.name}
             >
-                <div>Chart goes here</div>
+                {subType === FIELD_SUBTYPES.line ? (
+                    <LineChart
+                        data={value as { label: string; value: string }[]}
+                    />
+                ) : (
+                    <AreaChart
+                        data={value as { label: string; value: string[] }[]}
+                    />
+                )}
             </Modal>
         </div>
     );

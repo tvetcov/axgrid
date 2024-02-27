@@ -21,7 +21,7 @@
             "id": 4,
             "name": "Time of Availability",
             "type": "ChartFieldData",
-            "subType": "boxplot"
+            "subType": "area"
         },
         {
             "id": 5,
@@ -80,7 +80,7 @@
             "id": 4,
             "name": "Time of Availability",
             "type": "ChartFieldData",
-            "subType": "boxplot"
+            "subType": "area"
         },
         {
             "id": 5,
