@@ -1,5 +1,5 @@
 import {
-    createMemoryHistory,
+    createHashHistory,
     createRouter,
     RouterProvider
 } from '@tanstack/react-router';
@@ -10,11 +10,9 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 import { routeTree } from 'routeTree.gen';
 import theme from 'styles/theme';
 
-const memoryHistory = createMemoryHistory({
-    initialEntries: ['/']
-});
+const hashHistory = createHashHistory();
 
-const router = createRouter({ routeTree, history: memoryHistory });
+const router = createRouter({ routeTree, history: hashHistory });
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {

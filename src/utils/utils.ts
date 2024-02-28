@@ -1,7 +1,3 @@
-export function timeout(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 export function formatCurrency(value: number) {
     return value.toLocaleString('en-US', {
         style: 'currency',

@@ -7,7 +7,6 @@ import {
 } from 'services/api.types';
 import DataService from 'services/data.service';
 import SocketService from 'services/socket.service';
-import { timeout } from 'utils/utils';
 
 const useDashboard = () => {
     const [energyType, setEnergyType] = useState<ENERGY_SOURCE_ID>(
@@ -91,9 +90,7 @@ const useDashboard = () => {
         void Promise.all([
             DataService.fetch<EnergySource[]>('energySources'),
             DataService.fetch<FieldDefinitions>('fields')
-        ]).then(async ([energySources, fields]) => {
-            await timeout(250);
-
+        ]).then(([energySources, fields]) => {
             if (energySources && fields) {
                 setAvailableEnergySources(energySources);
                 setFieldDefinitions(fields);

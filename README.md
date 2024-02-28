@@ -34,6 +34,7 @@ driving force in the evolution of the multiverse's energy landscape.
 -   [React Hook Form](https://react-hook-form.com/)
 -   [Recharts](https://recharts.org/)
 -   [Socketbay](https://socketsbay.com/)
+-   [Vitest](https://vitest.dev/)
 -   Check package.json to see more :)
 
 ## Some screenshots of the project 📸
