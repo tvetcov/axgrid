@@ -28,12 +28,12 @@ const IconMenu = <T,>({
     };
 
     return (
-        rowActions && (
+        Boolean(rowActions?.length) && (
             <>
                 <IconButton
                     onClick={handleMenuClick}
                     size="large"
-                    aria-label="delete"
+                    aria-label="menu"
                 >
                     <MoreVertIcon />
                 </IconButton>

@@ -36,7 +36,10 @@ interface CustomField {
 
 export type CustomFieldValue = string | ChartFieldValue;
 
-export type ChartFieldValue = { label: string; value: string | string[] }[];
+export type ChartFieldValue = {
+    label: string;
+    value: number | string | string[];
+}[];
 
 export enum ORDER_STATUS {
     Open = 'Open',
