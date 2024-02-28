@@ -1,1 +1,0 @@
-import{S as a,j as t}from"./index-C1TVl4dj.js";const n=({value:e})=>{const r=a(new Date(e),"dd/MM/yyyy");return t.jsxs(t.Fragment,{children:[t.jsx("b",{children:"Until:"})," ",r]})};export{n as default};
