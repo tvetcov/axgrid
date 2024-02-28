@@ -1,0 +1,524 @@
+[
+    {
+        "id": 2092,
+        "source": "Thermal",
+        "price": "$96.42",
+        "minimumPurchaseQuantity": 572,
+        "status": "Open",
+        "contractTerms": {
+            "duration": "2 years",
+            "penalty": "36% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "Wire Transfer",
+            "paymentDate": "2024-02-28T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "500 MW"
+            },
+            {
+                "id": 2,
+                "value": "89%"
+            },
+            {
+                "id": 3,
+                "value": "https://cdn.savemyexams.com/cdn-cgi/image/f=auto,width=1920/uploads/2023/07/2-1-10-temperature-gradient-diagram-png-ib-2025-physics.png"
+            },
+            {
+                "id": 4,
+                "value": "3.5%"
+            },
+            {
+                "id": 5,
+                "value": "64°08'32.0\"N 21°56'26.8\"W"
+            },
+            {
+                "id": 6,
+                "value": "https://justenergy.com/blog/thermal-energy-what-it-is-how-it-works-environmental-impact/"
+            }
+        ]
+    },
+    {
+        "id": 3996,
+        "source": "Hydro",
+        "price": "$94.40",
+        "minimumPurchaseQuantity": 547,
+        "status": "Open",
+        "contractTerms": {
+            "duration": "1 years",
+            "penalty": "40% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "Credit Card",
+            "paymentDate": "2024-03-02T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "1950 MW"
+            },
+            {
+                "id": 2,
+                "value": [
+                    {
+                        "label": "Y2018",
+                        "value": "98"
+                    },
+                    {
+                        "label": "Y2019",
+                        "value": "93"
+                    },
+                    {
+                        "label": "Y2020",
+                        "value": "86"
+                    },
+                    {
+                        "label": "Y2021",
+                        "value": "88"
+                    },
+                    {
+                        "label": "Y2022",
+                        "value": "83"
+                    },
+                    {
+                        "label": "Y2023",
+                        "value": "87"
+                    },
+                    {
+                        "label": "Y2024",
+                        "value": "91"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "value": "https://damsafety.org/sites/default/files/files/Dam%20Safety%20An%20Owner%27s%20Guidance%20Manual.pdf"
+            },
+            {
+                "id": 4,
+                "value": "980 MW - 1950 MW"
+            },
+            {
+                "id": 5,
+                "value": "9000 MW"
+            },
+            {
+                "id": 6,
+                "value": "8 km/h"
+            }
+        ]
+    },
+    {
+        "id": 3992,
+        "source": "Wind",
+        "price": "$19.90",
+        "minimumPurchaseQuantity": 550,
+        "status": "Rejected",
+        "contractTerms": {
+            "duration": "2 years",
+            "penalty": "25% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "Credit Card",
+            "paymentDate": "2024-11-18T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "110 MW"
+            },
+            {
+                "id": 2,
+                "value": "18°03'03.5\"N 120°35'26.5\"E"
+            },
+            {
+                "id": 3,
+                "value": "40%"
+            },
+            {
+                "id": 4,
+                "value": [
+                    {
+                        "label": "Mon",
+                        "value": ["05:16:36", "21:19:47"]
+                    },
+                    {
+                        "label": "Tue",
+                        "value": ["05:18:36", "21:15:47"]
+                    },
+                    {
+                        "label": "Wed",
+                        "value": ["05:24:36", "21:12:47"]
+                    },
+                    {
+                        "label": "Thu",
+                        "value": ["05:26:36", "21:11:47"]
+                    },
+                    {
+                        "label": "Fri",
+                        "value": ["05:29:36", "21:09:47"]
+                    },
+                    {
+                        "label": "Sat",
+                        "value": ["05:32:36", "21:06:47"]
+                    },
+                    {
+                        "label": "Sun",
+                        "value": ["05:35:36", "21:01:47"]
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "value": "https://assets-global.website-files.com/603d0d2db8ec32ba7d44fffe/603d0e327eb2748c8ab1053f_loremipsum.pdf"
+            }
+        ]
+    },
+    {
+        "id": 2359,
+        "source": "Kinetic",
+        "price": "$39.70",
+        "minimumPurchaseQuantity": 268,
+        "status": "Pending",
+        "contractTerms": {
+            "duration": "1 years",
+            "penalty": "15% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "ACH",
+            "paymentDate": "2024-06-21T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "120 kW"
+            },
+            {
+                "id": 2,
+                "value": "45°49'06.3\"N 9°05'42.2\"E"
+            },
+            {
+                "id": 3,
+                "value": "43%"
+            },
+            {
+                "id": 4,
+                "value": "Reliable and efficient turbines"
+            }
+        ]
+    },
+    {
+        "id": 2953,
+        "source": "Solar",
+        "price": "$44.70",
+        "minimumPurchaseQuantity": 585,
+        "status": "Open",
+        "contractTerms": {
+            "duration": "1 years",
+            "penalty": "19% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "Credit Card",
+            "paymentDate": "2024-02-28T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "4 kW"
+            },
+            {
+                "id": 2,
+                "value": "51°20'21.9\"N 12°22'31.9\"E"
+            },
+            {
+                "id": 3,
+                "value": [
+                    {
+                        "label": "January",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "February",
+                        "value": 5.2
+                    },
+                    {
+                        "label": "March",
+                        "value": 6.1
+                    },
+                    {
+                        "label": "April",
+                        "value": 7.3
+                    },
+                    {
+                        "label": "May",
+                        "value": 8.2
+                    },
+                    {
+                        "label": "June",
+                        "value": 9.1
+                    },
+                    {
+                        "label": "July",
+                        "value": 9.5
+                    },
+                    {
+                        "label": "August",
+                        "value": 8.9
+                    },
+                    {
+                        "label": "September",
+                        "value": 7.8
+                    },
+                    {
+                        "label": "October",
+                        "value": 6.5
+                    },
+                    {
+                        "label": "November",
+                        "value": 5.1
+                    },
+                    {
+                        "label": "December",
+                        "value": 4.3
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "value": [
+                    {
+                        "label": "Mon",
+                        "value": ["05:16:36", "21:19:47"]
+                    },
+                    {
+                        "label": "Tue",
+                        "value": ["05:18:36", "21:15:47"]
+                    },
+                    {
+                        "label": "Wed",
+                        "value": ["05:24:36", "21:12:47"]
+                    },
+                    {
+                        "label": "Thu",
+                        "value": ["05:26:36", "21:11:47"]
+                    },
+                    {
+                        "label": "Fri",
+                        "value": ["05:29:36", "21:09:47"]
+                    },
+                    {
+                        "label": "Sat",
+                        "value": ["05:32:36", "21:06:47"]
+                    },
+                    {
+                        "label": "Sun",
+                        "value": ["05:35:36", "21:01:47"]
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "value": "https://assets-global.website-files.com/603d0d2db8ec32ba7d44fffe/603d0e327eb2748c8ab1053f_loremipsum.pdf"
+            }
+        ]
+    },
+    {
+        "id": 2925,
+        "source": "Gas",
+        "price": "$76.43",
+        "minimumPurchaseQuantity": 553,
+        "status": "Accepted",
+        "contractTerms": {
+            "duration": "2 years",
+            "penalty": "7% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "Credit Card",
+            "paymentDate": "2024-09-29T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "400 MW"
+            },
+            {
+                "id": 2,
+                "value": "Distribution pipeline system"
+            },
+            {
+                "id": 3,
+                "value": "150 MW - 400 MW"
+            },
+            {
+                "id": 4,
+                "value": "https://www.sciencedirect.com/science/article/abs/pii/S1750583612002988"
+            },
+            {
+                "id": 5,
+                "value": "2026-02-21T18:26:27.430Z"
+            }
+        ]
+    },
+    {
+        "id": 3370,
+        "source": "Gas",
+        "price": "$61.50",
+        "minimumPurchaseQuantity": 999,
+        "status": "Accepted",
+        "contractTerms": {
+            "duration": "2 years",
+            "penalty": "14% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "Credit Card",
+            "paymentDate": "2024-04-20T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "750 MW"
+            },
+            {
+                "id": 2,
+                "value": "Gathering pipeline system"
+            },
+            {
+                "id": 3,
+                "value": "400 MW - 750 MW"
+            },
+            {
+                "id": 4,
+                "value": "https://www.sciencedirect.com/science/article/abs/pii/S1750583612002988"
+            },
+            {
+                "id": 5,
+                "value": "2024-02-21T18:26:27.430Z"
+            }
+        ]
+    },
+    {
+        "id": 2409,
+        "source": "Solar",
+        "price": "$83.11",
+        "minimumPurchaseQuantity": 109,
+        "status": "Rejected",
+        "contractTerms": {
+            "duration": "1 years",
+            "penalty": "5% of remaining contract value",
+            "legalConditions": "Refer to standard contract terms"
+        },
+        "paymentTerms": {
+            "paymentMethod": "Credit Card",
+            "paymentDate": "2024-07-04T22:00:00.000Z"
+        },
+        "customFields": [
+            {
+                "id": 1,
+                "value": "2.5 kW"
+            },
+            {
+                "id": 2,
+                "value": "40°27'06.7\"N 3°41'29.7\"W"
+            },
+            {
+                "id": 3,
+                "value": [
+                    {
+                        "label": "January",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "February",
+                        "value": 5.2
+                    },
+                    {
+                        "label": "March",
+                        "value": 6.1
+                    },
+                    {
+                        "label": "April",
+                        "value": 7.3
+                    },
+                    {
+                        "label": "May",
+                        "value": 8.2
+                    },
+                    {
+                        "label": "June",
+                        "value": 9.1
+                    },
+                    {
+                        "label": "July",
+                        "value": 9.5
+                    },
+                    {
+                        "label": "August",
+                        "value": 8.9
+                    },
+                    {
+                        "label": "September",
+                        "value": 7.8
+                    },
+                    {
+                        "label": "October",
+                        "value": 6.5
+                    },
+                    {
+                        "label": "November",
+                        "value": 5.1
+                    },
+                    {
+                        "label": "December",
+                        "value": 4.3
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "value": [
+                    {
+                        "label": "Mon",
+                        "value": ["05:16:36", "21:19:47"]
+                    },
+                    {
+                        "label": "Tue",
+                        "value": ["05:18:36", "21:15:47"]
+                    },
+                    {
+                        "label": "Wed",
+                        "value": ["05:24:36", "21:12:47"]
+                    },
+                    {
+                        "label": "Thu",
+                        "value": ["05:26:36", "21:11:47"]
+                    },
+                    {
+                        "label": "Fri",
+                        "value": ["05:29:36", "21:09:47"]
+                    },
+                    {
+                        "label": "Sat",
+                        "value": ["05:32:36", "21:06:47"]
+                    },
+                    {
+                        "label": "Sun",
+                        "value": ["05:35:36", "21:01:47"]
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "value": "https://assets-global.website-files.com/603d0d2db8ec32ba7d44fffe/603d0e327eb2748c8ab1053f_loremipsum.pdf"
+            }
+        ]
+    }
+]
