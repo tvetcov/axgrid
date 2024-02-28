@@ -6,3 +6,7 @@ coverage
 **/.hg
 **/node_modules
 src/routeTree.gen.ts
+.github
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE
