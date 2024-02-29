@@ -19,35 +19,5 @@ export const EnergyFormValidationSchema: ZodType<
             required_error: 'Min purchase quantity is required',
             invalid_type_error: 'Min purchase quantity is required to be number'
         })
-        .positive(),
-    contractTerms: z.record(
-        z.string(),
-        z.object({
-            duration: z.string({
-                required_error: 'Duration is required',
-                invalid_type_error: 'Duration is required to be string'
-            }),
-            penalty: z.string({
-                required_error: 'Penalty is required',
-                invalid_type_error: 'Penalty is required to be string'
-            }),
-            legalConditions: z.string({
-                required_error: 'Legal conditions is required',
-                invalid_type_error: 'Legal conditions is required to be string'
-            })
-        })
-    ),
-    paymentTerms: z.record(
-        z.string(),
-        z.object({
-            paymentMethod: z.string({
-                required_error: 'Duration is required',
-                invalid_type_error: 'Duration is required to be string'
-            }),
-            paymentDate: z.date({
-                required_error: 'Legal conditions is required',
-                invalid_type_error: 'Legal conditions is required to be string'
-            })
-        })
-    )
+        .positive()
 });
