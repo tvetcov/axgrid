@@ -45,6 +45,7 @@ const IconMenu = <T,>({
                 >
                     {rowActions.map(action => (
                         <MenuItem
+                            key={action.label}
                             disabled={action.getIsDisabled(row)}
                             onClick={() => {
                                 action.onClick(row);

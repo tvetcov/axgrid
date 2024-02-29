@@ -9,6 +9,12 @@ The most unpredictable yet exciting energy trading platform in the multiverse.
 3. Run `npm start` to start the development server
 4. Go to `http://localhost:5173` to see the app running
 
+## To Run The Tests 🧪
+
+1. Have **Node 18** or higher installed
+2. Run `npm test` to run the tests
+3. Run `npm run test:coverage` to run the tests and see the coverage
+
 ## The purpose of this project 🎯
 
 The AxGrid front-end is more than just a user interface; it's a gateway to the future of energy trading in the

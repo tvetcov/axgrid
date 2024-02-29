@@ -5,7 +5,7 @@ import {
     EnergySource,
     FieldDefinitions
 } from 'services/api.types';
-import DataService from 'services/data.service';
+import DataFetchService from 'services/dataFetch.service.ts';
 import SocketService from 'services/socket.service';
 
 const useDashboard = () => {
@@ -88,8 +88,8 @@ const useDashboard = () => {
 
     useEffect(() => {
         void Promise.all([
-            DataService.fetch<EnergySource[]>('energySources'),
-            DataService.fetch<FieldDefinitions>('fields')
+            DataFetchService.fetch<EnergySource[]>('energySources'),
+            DataFetchService.fetch<FieldDefinitions>('fields')
         ]).then(([energySources, fields]) => {
             if (energySources && fields) {
                 setAvailableEnergySources(energySources);

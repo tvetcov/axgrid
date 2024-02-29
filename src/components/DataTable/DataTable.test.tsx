@@ -2,7 +2,7 @@ import { describe, expect, it, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
 import DataTable from './DataTable.component';
-import { getComparator, stableSort } from './dataTable.utils.ts';
+import { getComparator, stableSort } from './dataTable.utils';
 
 const people = [
     { name: 'Alice', age: 25 },

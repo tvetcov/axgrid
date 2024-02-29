@@ -10,7 +10,7 @@ import {
 } from 'services/api.types';
 
 import { format } from 'date-fns';
-import { DATE_FORMAT } from 'utils/constants.ts';
+import { DATE_FORMAT } from 'utils/constants';
 import ChartCell from './ChartCell';
 import LinkCell from './LinkCell';
 import StatusCell from './StatusCell';

@@ -17,7 +17,7 @@ const Widget = ({
     children: ReactNode;
 }) => {
     return (
-        <Paper sx={widgetStyles.root}>
+        <Paper sx={widgetStyles.root} data-testid="widget">
             <Typography variant="h2">{title}</Typography>
             {subtitle && (
                 <Typography variant="subtitle2">{subtitle}</Typography>

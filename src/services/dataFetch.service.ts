@@ -1,4 +1,4 @@
-class DataService {
+class DataFetchService {
     baseUrl: string;
 
     constructor() {
@@ -10,11 +10,11 @@ class DataService {
 
         try {
             const response = await fetch(url);
-            return (await response.json()) as T;
+            return response.json ? (await response.json()) : response as T;
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     }
 }
 
-export default new DataService();
+export default new DataFetchService();

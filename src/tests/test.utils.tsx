@@ -1,14 +1,23 @@
 import {
-    createHashHistory,
+    createRootRoute,
     createRouter,
     RouterProvider
 } from '@tanstack/react-router';
-import { routeTree } from '../routeTree.gen.ts';
+import { useMemo } from 'react';
 
-const hashHistory = createHashHistory();
-
-const router = createRouter({ routeTree, history: hashHistory });
-
-export const TestWrapper = ({ children }: { children: JSX.Element }) => {
-    return <RouterProvider router={router}>{children}</RouterProvider>;
-};
+/**
+ * Test router provider for testing components that use the router.
+ */
+export function TestRouter(props: React.PropsWithChildren) {
+    const router = useMemo(
+        () =>
+            createRouter({
+                routeTree: createRootRoute({
+                    component: () => props.children,
+                    notFoundComponent: () => props.children // temporary fix for rendering components
+                })
+            }),
+        [props.children]
+    );
+    return <RouterProvider router={router} />;
+}

@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-import { DATE_FORMAT } from 'utils/constants.ts';
+import { DATE_FORMAT } from 'utils/constants';
 
 interface DateTimeCellProps {
     value: string;

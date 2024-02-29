@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import { FIELD_SUBTYPES, FIELD_TYPES } from 'services/api.types.ts';
+import { FIELD_SUBTYPES, FIELD_TYPES } from 'services/api.types';
 import TableCellSwitch from './TableCellSwitch.components';
 
 describe('TableCellSwitch component', () => {
