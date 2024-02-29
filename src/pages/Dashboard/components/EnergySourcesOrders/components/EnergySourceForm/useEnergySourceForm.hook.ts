@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import {
     CustomFieldValue,
@@ -13,6 +14,7 @@ import {
     getDefaultEnergyFormFields,
     getDefaultFormValues
 } from './energySourceForm.utils';
+import { EnergyFormValidationSchema } from './formValidation.schema.ts';
 
 const useEnergySourceForm = ({
     energyType,
@@ -26,8 +28,13 @@ const useEnergySourceForm = ({
     const customFields = getCustomEnergyFormFields(sourceDefinitions);
     const fields = getDefaultEnergyFormFields(customFields);
     const defaultValues = getDefaultFormValues(customFields);
-    const { handleSubmit, control } = useForm<typeof defaultValues>({
-        defaultValues
+    const {
+        handleSubmit,
+        control,
+        formState: { errors }
+    } = useForm<typeof defaultValues>({
+        defaultValues,
+        resolver: zodResolver(EnergyFormValidationSchema)
     });
 
     const onSubmit = (data: typeof defaultValues) => {
@@ -53,6 +60,7 @@ const useEnergySourceForm = ({
     return {
         formFields: fields,
         control,
+        errors,
         handleSubmit: () => void handleSubmit(onSubmit)()
     };
 };
