@@ -20,7 +20,6 @@ export type TextFieldProps<T extends FieldValues> = {
     name: string;
     type: INPUT_FIELD_TYPES;
     InputProps?: Partial<OutlinedInputProps>;
-    error: string | undefined;
 };
 
 export type ArrayDataFieldProps<T extends FieldValues> = {

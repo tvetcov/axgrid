@@ -7,7 +7,6 @@ import { ENERGY_SOURCE_ID } from 'services/api.types';
 import ItemFormSwitch from 'components/FieldSwitch/ItemFormSwitch';
 import energySourceFormStyles from './energySourceForm.styles';
 import useEnergySourceForm from './useEnergySourceForm.hook';
-import { getErrorMessage } from './energySourceForm.utils';
 
 const EnergySourceForm = ({
     energyType,
@@ -16,7 +15,7 @@ const EnergySourceForm = ({
     energyType: ENERGY_SOURCE_ID;
     closeModal: () => void;
 }) => {
-    const { formFields, control, handleSubmit, errors } = useEnergySourceForm({
+    const { formFields, control, handleSubmit } = useEnergySourceForm({
         energyType,
         closeModal
     });
@@ -40,7 +39,6 @@ const EnergySourceForm = ({
                                     label={field.label}
                                     type={field.type}
                                     InputProps={field.InputProps}
-                                    error={getErrorMessage(errors, field.name)}
                                 />
                             </FormControl>
                         ))}

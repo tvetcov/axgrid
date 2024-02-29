@@ -5,7 +5,7 @@ import {
     EnergySource,
     FieldDefinitions
 } from 'services/api.types';
-import DataFetchService from 'services/dataFetch.service.ts';
+import DataFetchService from 'services/dataFetch.service';
 import SocketService from 'services/socket.service';
 
 const useDashboard = () => {

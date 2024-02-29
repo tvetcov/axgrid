@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from 'vitest';
-import DataService from '../dataFetch.service.ts';
+import DataService from '../dataFetch.service';
 
 describe('AxGrid', () => {
     test('baseUrl is set correctly in the constructor', () => {

@@ -1,4 +1,3 @@
-import { FieldErrors } from 'react-hook-form';
 import InputAdornment from '@mui/material/InputAdornment';
 
 import { INPUT_FIELD_TYPES } from 'components/Fields/field.types';
@@ -147,20 +146,4 @@ export const getCustomEnergyFormFields = (
     );
 
     return fields;
-};
-
-export const getErrorMessage = (error: FieldErrors, path: string) => {
-    const errorPathArr = path?.split('.');
-
-    if (Object.keys(error).length === 0) {
-        return '';
-    }
-
-    if (errorPathArr.length >= 2) {
-        const parentError = error[errorPathArr[0]] as FieldErrors;
-
-        return parentError[errorPathArr[1]]?.message as string;
-    }
-
-    return error[path]?.message as string;
 };
