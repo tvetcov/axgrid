@@ -9,13 +9,17 @@ describe('AxGrid', () => {
 
     test('fetch returns data on successful response', async () => {
         const mockResponse = { data: 'Mocked data' };
-        const mockFetch = vi.fn().mockResolvedValue(mockResponse);
+        const mockFetch = vi
+            .fn()
+            .mockImplementationOnce(() =>
+                Promise.resolve({ json: () => Promise.resolve(mockResponse) })
+            );
         global.fetch = mockFetch;
 
         const service = DataService;
         const response = await service.fetch<string>('test');
 
         expect(mockFetch).toBeCalledWith('./apiMocks/test.json');
-        expect(response).toEqual({ data: 'Mocked data' });
+        expect(response).toEqual(mockResponse);
     });
 });
