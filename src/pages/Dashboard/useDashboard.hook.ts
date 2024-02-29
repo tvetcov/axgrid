@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 import {
     ENERGY_SOURCE_ID,
@@ -25,39 +25,42 @@ const useDashboard = () => {
         setAvailableEnergySources([...availableEnergySources, energySource]);
     };
 
-    const editEnergySource = ({
-        energySourceId,
-        propToEdit,
-        propValue
-    }: {
-        energySourceId: EnergySource['id'];
-        propToEdit: keyof EnergySource;
-        propValue: EnergySource[keyof EnergySource];
-    }) => {
-        const updatedEnergySources = availableEnergySources.map(
-            energySource => {
-                if (energySource.id === energySourceId) {
-                    return {
-                        ...energySource,
+    const editEnergySource = useCallback(
+        ({
+            energySourceId,
+            propToEdit,
+            propValue
+        }: {
+            energySourceId: EnergySource['id'];
+            propToEdit: keyof EnergySource;
+            propValue: EnergySource[keyof EnergySource];
+        }) => {
+            const updatedEnergySources = availableEnergySources.map(
+                energySource => {
+                    if (energySource.id === energySourceId) {
+                        return {
+                            ...energySource,
+                            [propToEdit]: propValue
+                        };
+                    }
+
+                    return energySource;
+                }
+            );
+
+            SocketService.send(
+                JSON.stringify({
+                    data: {
+                        id: energySourceId,
                         [propToEdit]: propValue
-                    };
-                }
+                    }
+                })
+            );
 
-                return energySource;
-            }
-        );
-
-        SocketService.send(
-            JSON.stringify({
-                data: {
-                    id: energySourceId,
-                    [propToEdit]: propValue
-                }
-            })
-        );
-
-        setAvailableEnergySources(updatedEnergySources);
-    };
+            setAvailableEnergySources(updatedEnergySources);
+        },
+        [availableEnergySources]
+    );
 
     SocketService.onMessage((message: string) => {
         const parsedMessage = JSON.parse(message) as { data: EnergySource };

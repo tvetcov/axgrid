@@ -25,6 +25,7 @@ const EnergySourcesOrders = () => {
         closeModal,
         rowActions
     } = useEnergySourceSelector();
+
     return (
         <Widget
             title="Energy Source Deals"
