@@ -1,0 +1,1 @@
+import{S as a,j as t}from"./index-qTc5dQjl.js";import{e as o}from"./dashboard.index.lazy-C0dI0-sK.js";import"./Toolbar-CkEJ_mqw.js";const i=({value:e})=>{const r=a(new Date(e),o);return t.jsxs(t.Fragment,{children:[t.jsx("b",{children:"Until:"})," ",r]})};export{i as default};
