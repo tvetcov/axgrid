@@ -9,8 +9,7 @@ const TextField = <T extends FieldValues>({
     label,
     name,
     type = INPUT_FIELD_TYPES.TEXT,
-    InputProps,
-    error
+    InputProps
 }: TextFieldProps<T>) => {
     return (
         <Controller
@@ -23,8 +22,6 @@ const TextField = <T extends FieldValues>({
                         InputProps={InputProps}
                         variant="outlined"
                         label={label}
-                        error={Boolean(error)}
-                        helperText={error}
                         type={type}
                         placeholder={`Enter ${label}`}
                         InputLabelProps={{ shrink: true }}
