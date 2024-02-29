@@ -9,7 +9,7 @@ import TableHeader from './components/TableHeader';
 import useDataTable from './useDataTable.hook';
 import { DataTableProps } from './dataTable.types';
 
-const ROWS_PER_PAGE = [5, 10, 25];
+const ROWS_PER_PAGE = [5, 10];
 
 const DataTable = <T,>({
     rows,
