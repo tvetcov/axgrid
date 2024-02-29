@@ -150,9 +150,13 @@ export const getCustomEnergyFormFields = (
 };
 
 export const getErrorMessage = (error: FieldErrors, path: string) => {
-    const errorPathArr = path.split('.');
+    const errorPathArr = path?.split('.');
 
-    if (errorPathArr.length > 1) {
+    if (Object.keys(error).length === 0) {
+        return '';
+    }
+
+    if (errorPathArr.length >= 2) {
         const parentError = error[errorPathArr[0]] as FieldErrors;
 
         return parentError[errorPathArr[1]]?.message as string;
